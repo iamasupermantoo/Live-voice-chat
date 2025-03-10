@@ -1,0 +1,89 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-img" class="control-label col-xs-12 col-sm-2">{:__('图片')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-img" data-rule="" class="form-control" size="50" name="row[img]" type="text" value="">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-img" class="btn btn-danger plupload" data-input-id="c-img" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-url="Ajax/upload/?filepath=/box/" data-preview-id="p-img"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-img" class="btn btn-primary fachoose" data-input-id="c-img" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-img"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-img"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+           <!--  <input id="c-type" class="form-control" name="row[type]" type="number"> -->
+           <select id="c-type" data-rule="required" class="form-control selectpicker" name="row[type]">
+                <option value="">请选择</option>
+                {foreach name="typeLists" item="vo"}
+                <option value="{$key}" {in name="key" value=""}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Wares_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select id="c-wares_id" data-rule="required" class="form-control selectpicker" name="row[wares_id]">
+                <option value="">请选择</option>
+                {foreach name="targetList" item="vo"}
+                <option data-type="{$vo.type}" value="{$vo.id}">{$vo.name}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('是否特殊礼物')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <!-- <input id="c-box_type" class="form-control" name="row[box_type]" type="number"> -->
+            {:build_radios('row[is_special]', ['0'=>__('否'), '1'=>__('是')])}
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Box_type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <!-- <input id="c-box_type" class="form-control" name="row[box_type]" type="number"> -->
+            {:build_radios('row[box_type]', ['1'=>__('普通宝箱'), '2'=>__('守护宝箱')])}
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Is_play')}:</label>
+        <div class="col-xs-12 col-sm-8">
+           <!--  <input id="c-is_play" class="form-control" name="row[is_play]" type="number" value="0"> -->
+           {:build_radios('row[is_play]', ['0'=>__('不播报'), '1'=>__('全服播报')])}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('是否公屏播报')}:</label>
+        <div class="col-xs-12 col-sm-8">
+           <!--  <input id="c-is_play" class="form-control" name="row[is_play]" type="number" value="0"> -->
+           {:build_radios('row[is_public_play]', ['0'=>__('不播报'), '1'=>__('播报')])}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('num')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-num" data-rule="required" class="form-control" data-date-format="" data-use-current="true" name="row[num]" type="number" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Addtime')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input readOnly id="c-addtime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[addtime]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

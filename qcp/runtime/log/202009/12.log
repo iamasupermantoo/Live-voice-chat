@@ -1,0 +1,879 @@
+---------------------------------------------------------------
+[ 2020-09-12T17:06:41+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/general/profile?ref=addtabs
+[运行时间：0.053884s] [吞吐率：18.56req/s] [内存消耗：6,779.16kb] [文件加载：131]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000580s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000750s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000398s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000592s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001072s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:06:43+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/index/index
+[运行时间：2.814672s] [吞吐率：0.36req/s] [内存消耗：7,890.34kb] [文件加载：149]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000575s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000868s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000503s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000674s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001092s ]
+[ sql ] [ SQL ] SELECT * FROM `b_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh` DESC [ RunTime:0.001213s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `b_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.001381s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:06:44+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/dashboard?addtabs=1
+[运行时间：0.099547s] [吞吐率：10.05req/s] [内存消耗：7,438.97kb] [文件加载：139]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000416s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000814s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000462s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000699s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001180s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_users` [ RunTime:0.001825s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` LIMIT 1 [ RunTime:0.000413s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  (  created_at>=date(now()) and created_at<DATE_ADD(date(now()),INTERVAL 1 DAY) ) LIMIT 1 [ RunTime:0.000362s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_order` [ RunTime:0.000635s ]
+[ sql ] [ SQL ] SELECT SUM(price) AS tp_sum FROM `b_order` WHERE  (  status = 2 ) LIMIT 1 [ RunTime:0.003731s ]
+[ sql ] [ SQL ] SELECT SUM(price) AS tp_sum FROM `b_order` WHERE  (  status = 2 and addtime>=1599840000 and addtime < 1599926399 ) LIMIT 1 [ RunTime:0.003434s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_tixian` [ RunTime:0.000831s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `b_tixian` WHERE  (  status = 1 ) LIMIT 1 [ RunTime:0.000659s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `b_tixian` WHERE  (  status = 1 and addtime>=1599840000 and addtime < 1599926399 ) LIMIT 1 [ RunTime:0.000611s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `b_tixian` WHERE  (  status = 2 ) LIMIT 1 [ RunTime:0.000631s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `b_tixian` WHERE  (  status = 2 and tx_time>=1599840000 and tx_time < 1599926399 ) LIMIT 1 [ RunTime:0.000639s ]
+[ sql ] [ SQL ] SELECT SUM(mizuan) AS tp_sum FROM `b_users` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000243s ]
+[ sql ] [ SQL ] SELECT SUM(mibi) AS tp_sum FROM `b_users` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000200s ]
+[ sql ] [ SQL ] SELECT SUM(r_mibi) AS tp_sum FROM `b_users` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000240s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'guanfang' LIMIT 1 [ RunTime:0.000196s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = '360' LIMIT 1 [ RunTime:0.000221s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'huawei' LIMIT 1 [ RunTime:0.000259s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'xiaomi' LIMIT 1 [ RunTime:0.000185s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'oppo' LIMIT 1 [ RunTime:0.000205s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'vivo' LIMIT 1 [ RunTime:0.000178s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'ali' LIMIT 1 [ RunTime:0.000224s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'baidu' LIMIT 1 [ RunTime:0.000174s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'yingyongbao' LIMIT 1 [ RunTime:0.000358s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'sougou' LIMIT 1 [ RunTime:0.000431s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'qita' LIMIT 1 [ RunTime:0.000529s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'lianxiang' LIMIT 1 [ RunTime:0.000336s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'meizu' LIMIT 1 [ RunTime:0.000250s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'sanxing' LIMIT 1 [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'weizhi' LIMIT 1 [ RunTime:0.000248s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'landie' LIMIT 1 [ RunTime:0.000248s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'landie01' LIMIT 1 [ RunTime:0.000216s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'landie02' LIMIT 1 [ RunTime:0.000201s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'landie03' LIMIT 1 [ RunTime:0.000194s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'landie04' LIMIT 1 [ RunTime:0.000313s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'landie05' LIMIT 1 [ RunTime:0.000255s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_tongji` [ RunTime:0.000916s ]
+[ sql ] [ SQL ] SELECT `id`,`logtime`,`addtime`,`register`,`active`,`recharge`,`tixian` FROM `b_tongji` WHERE  (  logtime >= '2020-08-27' ) ORDER BY `logtime` ASC [ RunTime:0.000319s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.000545s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:06:44+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/general/profile?addtabs=1
+[运行时间：0.124941s] [吞吐率：8.00req/s] [内存消耗：7,535.09kb] [文件加载：137]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000425s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000744s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000586s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000897s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:06:48+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/general/profile?addtabs=1
+[运行时间：0.061132s] [吞吐率：16.36req/s] [内存消耗：7,326.65kb] [文件加载：135]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000572s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000781s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000568s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000724s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001019s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:10:40+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/boxsmanage/awardbox?addtabs=1
+[运行时间：0.071586s] [吞吐率：13.97req/s] [内存消耗：7,828.24kb] [文件加载：140]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000704s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000730s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000392s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000638s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001111s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_wares` [ RunTime:0.001397s ]
+[ sql ] [ SQL ] SELECT * FROM `b_wares` WHERE  `enable` = 1 [ RunTime:0.000486s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_gifts` [ RunTime:0.000947s ]
+[ sql ] [ SQL ] SELECT * FROM `b_gifts` WHERE  `enable` = 1 [ RunTime:0.000447s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'boxsmanage/awardbox' LIMIT 1 [ RunTime:0.000484s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:10:41+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/wares/getTypeList
+[运行时间：0.053105s] [吞吐率：18.83req/s] [内存消耗：7,300.42kb] [文件加载：135]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000350s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000704s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000353s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000602s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001222s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:10:41+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/boxsmanage/awardbox/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599901840719
+[运行时间：0.071483s] [吞吐率：13.99req/s] [内存消耗：7,732.47kb] [文件加载：140]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000472s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000758s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000412s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000593s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001237s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_wares` [ RunTime:0.001109s ]
+[ sql ] [ SQL ] SELECT * FROM `b_wares` WHERE  `enable` = 1 [ RunTime:0.000431s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_gifts` [ RunTime:0.000784s ]
+[ sql ] [ SQL ] SELECT * FROM `b_gifts` WHERE  `enable` = 1 [ RunTime:0.000380s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_award_box` [ RunTime:0.000685s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_award_box` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000232s ]
+[ sql ] [ SQL ] SELECT * FROM `b_award_box` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000251s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_gifts` WHERE  `id` = 82 LIMIT 1 [ RunTime:0.000256s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_gifts` WHERE  `id` = 81 LIMIT 1 [ RunTime:0.000236s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_gifts` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000187s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_gifts` WHERE  `id` = 41 LIMIT 1 [ RunTime:0.000212s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_gifts` WHERE  `id` = 54 LIMIT 1 [ RunTime:0.000179s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_gifts` WHERE  `id` = 56 LIMIT 1 [ RunTime:0.000188s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_gifts` WHERE  `id` = 60 LIMIT 1 [ RunTime:0.000188s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_gifts` WHERE  `id` = 65 LIMIT 1 [ RunTime:0.000191s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_gifts` WHERE  `id` = 67 LIMIT 1 [ RunTime:0.000192s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_gifts` WHERE  `id` = 72 LIMIT 1 [ RunTime:0.000186s ]
+[ sql ] [ SQL ] SELECT SUM(num) AS tp_sum FROM `b_award_box` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000222s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:10:41+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/boxsmanage/award?addtabs=1
+[运行时间：0.061237s] [吞吐率：16.33req/s] [内存消耗：7,241.59kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000444s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000684s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000424s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000702s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001041s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'boxsmanage/award' LIMIT 1 [ RunTime:0.000935s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:10:42+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/boxsmanage/awardlog?addtabs=1
+[运行时间：0.064174s] [吞吐率：15.58req/s] [内存消耗：7,242.48kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000434s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000687s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000562s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000729s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001213s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'boxsmanage/awardlog' LIMIT 1 [ RunTime:0.000845s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:10:43+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/wares/getTypeList
+[运行时间：0.056885s] [吞吐率：17.58req/s] [内存消耗：7,300.46kb] [文件加载：135]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000361s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000702s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000443s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000699s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001460s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:10:44+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/boxsmanage/award/index?addtabs=1&sort=is_special+desc%2Cid+desc&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599901842710
+[运行时间：0.083764s] [吞吐率：11.94req/s] [内存消耗：7,215.67kb] [文件加载：139]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000605s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000893s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000664s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000734s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001393s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_award` [ RunTime:0.001269s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_award` WHERE  `class` = 1 ORDER BY `is_special` DESC,`id` DESC LIMIT 1 [ RunTime:0.002532s ]
+[ sql ] [ SQL ] SELECT * FROM `b_award` WHERE  `class` = 1 ORDER BY `is_special` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.001019s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_gifts` [ RunTime:0.000790s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_gifts` WHERE  `id` = 81 LIMIT 1 [ RunTime:0.000272s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_gifts` WHERE  `id` = 81 LIMIT 1 [ RunTime:0.000188s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_gifts` WHERE  `id` = 82 LIMIT 1 [ RunTime:0.000328s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_gifts` WHERE  `id` = 49 LIMIT 1 [ RunTime:0.000232s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_gifts` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000241s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_gifts` WHERE  `id` = 54 LIMIT 1 [ RunTime:0.000226s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_gifts` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000226s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_gifts` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000327s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_gifts` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000255s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_gifts` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000302s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:10:44+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/wares/getTypeList
+[运行时间：0.061696s] [吞吐率：16.21req/s] [内存消耗：7,300.42kb] [文件加载：135]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000406s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000713s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000493s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000884s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001347s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:10:44+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/boxsmanage/awardlog/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599901843273
+[运行时间：0.064751s] [吞吐率：15.44req/s] [内存消耗：7,335.59kb] [文件加载：141]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000360s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000696s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000434s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000720s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001253s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_award_log` [ RunTime:0.001133s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_users` [ RunTime:0.000819s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_award_log` `awardlog` INNER JOIN `b_users` `users` ON `awardlog`.`user_id`=`users`.`id` ORDER BY `awardlog`.`id` DESC LIMIT 1 [ RunTime:0.000509s ]
+[ sql ] [ SQL ] SELECT `awardlog`.`id`,`awardlog`.`user_id`,`awardlog`.`is_play`,`awardlog`.`num`,`awardlog`.`type`,`awardlog`.`wares_id`,`awardlog`.`box_type`,`awardlog`.`addtime`,`awardlog`.`is_public_play`,`awardlog`.`term`,users.id AS users__id,users.wx_openid AS users__wx_openid,users.wb_openid AS users__wb_openid,users.qq_openid AS users__qq_openid,users.headimgurl AS users__headimgurl,users.nickname AS users__nickname,users.sex AS users__sex,users.birthday AS users__birthday,users.province AS users__province,users.city AS users__city,users.country AS users__country,users.phone AS users__phone,users.pass AS users__pass,users.salt AS users__salt,users.mizuan AS users__mizuan,users.mibi AS users__mibi,users.r_mibi AS users__r_mibi,users.mili AS users__mili,users.mlz AS users__mlz,users.jinbi AS users__jinbi,users.name AS users__name,users.idno AS users__idno,users.is_idcard AS users__is_idcard,users.constellation AS users__constellation,users.is_sign AS users__is_sign,users.scale AS users__scale,users.is_leader AS users__is_leader,users.mykeep AS users__mykeep,users.token AS users__token,users.status AS users__status,users.locktime AS users__locktime,users.ry_uid AS users__ry_uid,users.ry_token AS users__ry_token,users.ali_account AS users__ali_account,users.ali_user_id AS users__ali_user_id,users.ali_avatar AS users__ali_avatar,users.ali_nick_name AS users__ali_nick_name,users.district AS users__district,users.dress_4 AS users__dress_4,users.dress_5 AS users__dress_5,users.dress_6 AS users__dress_6,users.dress_7 AS users__dress_7,users.login_ip AS users__login_ip,users.created_at AS users__created_at,users.updated_at AS users__updated_at,users.cp_card AS users__cp_card,users.keys_num AS users__keys_num,users.points AS users__points,users.is_points_first AS users__is_points_first,users.system AS users__system,users.channel AS users__channel,users.isOnline AS users__isOnline,users.img_1 AS users__img_1,users.img_2 AS users__img_2,users.img_3 AS users__img_3,users.device_token AS users__device_token FROM `b_award_log` `awardlog` INNER JOIN `b_users` `users` ON `awardlog`.`user_id`=`users`.`id` ORDER BY `awardlog`.`id` DESC LIMIT 0,10 [ RunTime:0.000850s ]
+[ sql ] [ SQL ] SELECT SUM(num) AS tp_sum FROM `b_award_log` `awardlog` INNER JOIN `b_users` `users` ON `awardlog`.`user_id`=`users`.`id` ORDER BY `awardlog`.`id` DESC LIMIT 1 [ RunTime:0.000292s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:10:54+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/offreads?addtabs=1
+[运行时间：0.058704s] [吞吐率：17.03req/s] [内存消耗：7,239.42kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000601s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000729s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000561s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001153s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'usersmanage/offreads' LIMIT 1 [ RunTime:0.000809s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:10:57+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/offreads/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599901856378
+[运行时间：0.068776s] [吞吐率：14.54req/s] [内存消耗：7,434.23kb] [文件加载：142]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000592s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000681s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000391s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000783s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001446s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_off_reads` [ RunTime:0.001172s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_users` [ RunTime:0.000904s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_official_messages` [ RunTime:0.000617s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_off_reads` `offreads` INNER JOIN `b_users` `users` ON `offreads`.`user_id`=`users`.`id` INNER JOIN `b_official_messages` `offmsg` ON `offreads`.`off_id`=`offmsg`.`id` ORDER BY `offreads`.`id` DESC LIMIT 1 [ RunTime:0.000358s ]
+[ sql ] [ SQL ] SELECT `offreads`.`id`,`offreads`.`off_id`,`offreads`.`user_id`,`offreads`.`is_read`,`offreads`.`addtime`,users.id AS users__id,users.wx_openid AS users__wx_openid,users.wb_openid AS users__wb_openid,users.qq_openid AS users__qq_openid,users.headimgurl AS users__headimgurl,users.nickname AS users__nickname,users.sex AS users__sex,users.birthday AS users__birthday,users.province AS users__province,users.city AS users__city,users.country AS users__country,users.phone AS users__phone,users.pass AS users__pass,users.salt AS users__salt,users.mizuan AS users__mizuan,users.mibi AS users__mibi,users.r_mibi AS users__r_mibi,users.mili AS users__mili,users.mlz AS users__mlz,users.jinbi AS users__jinbi,users.name AS users__name,users.idno AS users__idno,users.is_idcard AS users__is_idcard,users.constellation AS users__constellation,users.is_sign AS users__is_sign,users.scale AS users__scale,users.is_leader AS users__is_leader,users.mykeep AS users__mykeep,users.token AS users__token,users.status AS users__status,users.locktime AS users__locktime,users.ry_uid AS users__ry_uid,users.ry_token AS users__ry_token,users.ali_account AS users__ali_account,users.ali_user_id AS users__ali_user_id,users.ali_avatar AS users__ali_avatar,users.ali_nick_name AS users__ali_nick_name,users.district AS users__district,users.dress_4 AS users__dress_4,users.dress_5 AS users__dress_5,users.dress_6 AS users__dress_6,users.dress_7 AS users__dress_7,users.login_ip AS users__login_ip,users.created_at AS users__created_at,users.updated_at AS users__updated_at,users.cp_card AS users__cp_card,users.keys_num AS users__keys_num,users.points AS users__points,users.is_points_first AS users__is_points_first,users.system AS users__system,users.channel AS users__channel,users.isOnline AS users__isOnline,users.img_1 AS users__img_1,users.img_2 AS users__img_2,users.img_3 AS users__img_3,users.device_token AS users__device_token,offmsg.id AS offmsg__id,offmsg.title AS offmsg__title,offmsg.img AS offmsg__img,offmsg.user_id AS offmsg__user_id,offmsg.content AS offmsg__content,offmsg.type AS offmsg__type,offmsg.url AS offmsg__url,offmsg.updated_at AS offmsg__updated_at,offmsg.created_at AS offmsg__created_at FROM `b_off_reads` `offreads` INNER JOIN `b_users` `users` ON `offreads`.`user_id`=`users`.`id` INNER JOIN `b_official_messages` `offmsg` ON `offreads`.`off_id`=`offmsg`.`id` ORDER BY `offreads`.`id` DESC LIMIT 0,10 [ RunTime:0.002442s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:10:58+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/users?addtabs=1
+[运行时间：0.063320s] [吞吐率：15.79req/s] [内存消耗：7,324.32kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000537s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000716s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000527s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000732s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001467s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'usersmanage/users' LIMIT 1 [ RunTime:0.001054s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:10:58+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/usermusics?addtabs=1
+[运行时间：0.062974s] [吞吐率：15.88req/s] [内存消耗：7,272.53kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000424s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000705s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000584s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000739s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001206s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'usersmanage/usermusics' LIMIT 1 [ RunTime:0.001114s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:10:59+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/Users/getChannelList
+[运行时间：0.057613s] [吞吐率：17.36req/s] [内存消耗：7,361.41kb] [文件加载：135]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000343s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000720s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000368s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000663s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001574s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:10:59+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/Users/getSystemList
+[运行时间：0.076179s] [吞吐率：13.13req/s] [内存消耗：7,361.27kb] [文件加载：135]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000315s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000721s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000354s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000733s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001364s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:10:59+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/users/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599901858284
+[运行时间：0.069177s] [吞吐率：14.46req/s] [内存消耗：7,223.84kb] [文件加载：137]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000526s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000729s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000595s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000734s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001998s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_users` [ RunTime:0.001663s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000393s ]
+[ sql ] [ SQL ] SELECT * FROM `b_users` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000550s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `isOnline` = 0 ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000316s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:10:59+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/usermusics/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599901858838
+[运行时间：0.067075s] [吞吐率：14.91req/s] [内存消耗：7,408.69kb] [文件加载：141]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000521s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000707s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000404s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000567s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000999s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_user_musics` [ RunTime:0.001173s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_users` [ RunTime:0.000875s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_user_musics` `usermusics` INNER JOIN `b_users` `users` ON `usermusics`.`user_id`=`users`.`id` ORDER BY `usermusics`.`id` DESC LIMIT 1 [ RunTime:0.000490s ]
+[ sql ] [ SQL ] SELECT `usermusics`.`id`,`usermusics`.`user_id`,`usermusics`.`music_url`,`usermusics`.`music_size`,`usermusics`.`enable`,`usermusics`.`updated_at`,`usermusics`.`created_at`,`usermusics`.`music_name`,`usermusics`.`singer`,`usermusics`.`upload_user`,users.id AS users__id,users.wx_openid AS users__wx_openid,users.wb_openid AS users__wb_openid,users.qq_openid AS users__qq_openid,users.headimgurl AS users__headimgurl,users.nickname AS users__nickname,users.sex AS users__sex,users.birthday AS users__birthday,users.province AS users__province,users.city AS users__city,users.country AS users__country,users.phone AS users__phone,users.pass AS users__pass,users.salt AS users__salt,users.mizuan AS users__mizuan,users.mibi AS users__mibi,users.r_mibi AS users__r_mibi,users.mili AS users__mili,users.mlz AS users__mlz,users.jinbi AS users__jinbi,users.name AS users__name,users.idno AS users__idno,users.is_idcard AS users__is_idcard,users.constellation AS users__constellation,users.is_sign AS users__is_sign,users.scale AS users__scale,users.is_leader AS users__is_leader,users.mykeep AS users__mykeep,users.token AS users__token,users.status AS users__status,users.locktime AS users__locktime,users.ry_uid AS users__ry_uid,users.ry_token AS users__ry_token,users.ali_account AS users__ali_account,users.ali_user_id AS users__ali_user_id,users.ali_avatar AS users__ali_avatar,users.ali_nick_name AS users__ali_nick_name,users.district AS users__district,users.dress_4 AS users__dress_4,users.dress_5 AS users__dress_5,users.dress_6 AS users__dress_6,users.dress_7 AS users__dress_7,users.login_ip AS users__login_ip,users.created_at AS users__created_at,users.updated_at AS users__updated_at,users.cp_card AS users__cp_card,users.keys_num AS users__keys_num,users.points AS users__points,users.is_points_first AS users__is_points_first,users.system AS users__system,users.channel AS users__channel,users.isOnline AS users__isOnline,users.img_1 AS users__img_1,users.img_2 AS users__img_2,users.img_3 AS users__img_3,users.device_token AS users__device_token FROM `b_user_musics` `usermusics` INNER JOIN `b_users` `users` ON `usermusics`.`user_id`=`users`.`id` ORDER BY `usermusics`.`id` DESC LIMIT 0,10 [ RunTime:0.000855s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:10:59+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/black?addtabs=1
+[运行时间：0.063132s] [吞吐率：15.84req/s] [内存消耗：7,240.28kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000600s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.001219s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000590s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000980s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001374s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'usersmanage/black' LIMIT 1 [ RunTime:0.000886s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:11:00+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/follows?addtabs=1
+[运行时间：0.061502s] [吞吐率：16.26req/s] [内存消耗：7,236.45kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000523s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000849s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000398s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000621s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001119s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'usersmanage/follows' LIMIT 1 [ RunTime:0.000850s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:11:00+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/black/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599901859781
+[运行时间：0.066384s] [吞吐率：15.06req/s] [内存消耗：7,417.93kb] [文件加载：141]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000364s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000798s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000485s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000639s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001131s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_black` [ RunTime:0.001333s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_users` [ RunTime:0.001174s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_black` `black` INNER JOIN `b_users` `users` ON `black`.`user_id`=`users`.`id` INNER JOIN `b_users` `users2` ON `black`.`from_uid`=`users2`.`id` ORDER BY `black`.`id` DESC LIMIT 1 [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SELECT `black`.`id`,`black`.`user_id`,`black`.`from_uid`,`black`.`status`,`black`.`addtime`,users.id AS users__id,users.wx_openid AS users__wx_openid,users.wb_openid AS users__wb_openid,users.qq_openid AS users__qq_openid,users.headimgurl AS users__headimgurl,users.nickname AS users__nickname,users.sex AS users__sex,users.birthday AS users__birthday,users.province AS users__province,users.city AS users__city,users.country AS users__country,users.phone AS users__phone,users.pass AS users__pass,users.salt AS users__salt,users.mizuan AS users__mizuan,users.mibi AS users__mibi,users.r_mibi AS users__r_mibi,users.mili AS users__mili,users.mlz AS users__mlz,users.jinbi AS users__jinbi,users.name AS users__name,users.idno AS users__idno,users.is_idcard AS users__is_idcard,users.constellation AS users__constellation,users.is_sign AS users__is_sign,users.scale AS users__scale,users.is_leader AS users__is_leader,users.mykeep AS users__mykeep,users.token AS users__token,users.status AS users__status,users.locktime AS users__locktime,users.ry_uid AS users__ry_uid,users.ry_token AS users__ry_token,users.ali_account AS users__ali_account,users.ali_user_id AS users__ali_user_id,users.ali_avatar AS users__ali_avatar,users.ali_nick_name AS users__ali_nick_name,users.district AS users__district,users.dress_4 AS users__dress_4,users.dress_5 AS users__dress_5,users.dress_6 AS users__dress_6,users.dress_7 AS users__dress_7,users.login_ip AS users__login_ip,users.created_at AS users__created_at,users.updated_at AS users__updated_at,users.cp_card AS users__cp_card,users.keys_num AS users__keys_num,users.points AS users__points,users.is_points_first AS users__is_points_first,users.system AS users__system,users.channel AS users__channel,users.isOnline AS users__isOnline,users.img_1 AS users__img_1,users.img_2 AS users__img_2,users.img_3 AS users__img_3,users.device_token AS users__device_token,users2.id AS users2__id,users2.wx_openid AS users2__wx_openid,users2.wb_openid AS users2__wb_openid,users2.qq_openid AS users2__qq_openid,users2.headimgurl AS users2__headimgurl,users2.nickname AS users2__nickname,users2.sex AS users2__sex,users2.birthday AS users2__birthday,users2.province AS users2__province,users2.city AS users2__city,users2.country AS users2__country,users2.phone AS users2__phone,users2.pass AS users2__pass,users2.salt AS users2__salt,users2.mizuan AS users2__mizuan,users2.mibi AS users2__mibi,users2.r_mibi AS users2__r_mibi,users2.mili AS users2__mili,users2.mlz AS users2__mlz,users2.jinbi AS users2__jinbi,users2.name AS users2__name,users2.idno AS users2__idno,users2.is_idcard AS users2__is_idcard,users2.constellation AS users2__constellation,users2.is_sign AS users2__is_sign,users2.scale AS users2__scale,users2.is_leader AS users2__is_leader,users2.mykeep AS users2__mykeep,users2.token AS users2__token,users2.status AS users2__status,users2.locktime AS users2__locktime,users2.ry_uid AS users2__ry_uid,users2.ry_token AS users2__ry_token,users2.ali_account AS users2__ali_account,users2.ali_user_id AS users2__ali_user_id,users2.ali_avatar AS users2__ali_avatar,users2.ali_nick_name AS users2__ali_nick_name,users2.district AS users2__district,users2.dress_4 AS users2__dress_4,users2.dress_5 AS users2__dress_5,users2.dress_6 AS users2__dress_6,users2.dress_7 AS users2__dress_7,users2.login_ip AS users2__login_ip,users2.created_at AS users2__created_at,users2.updated_at AS users2__updated_at,users2.cp_card AS users2__cp_card,users2.keys_num AS users2__keys_num,users2.points AS users2__points,users2.is_points_first AS users2__is_points_first,users2.system AS users2__system,users2.channel AS users2__channel,users2.isOnline AS users2__isOnline,users2.img_1 AS users2__img_1,users2.img_2 AS users2__img_2,users2.img_3 AS users2__img_3,users2.device_token AS users2__device_token FROM `b_black` `black` INNER JOIN `b_users` `users` ON `black`.`user_id`=`users`.`id` INNER JOIN `b_users` `users2` ON `black`.`from_uid`=`users2`.`id` ORDER BY `black`.`id` DESC LIMIT 0,10 [ RunTime:0.000828s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:11:01+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/likes?addtabs=1
+[运行时间：0.062101s] [吞吐率：16.10req/s] [内存消耗：7,247.66kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000646s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000844s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000697s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000972s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001017s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'usersmanage/likes' LIMIT 1 [ RunTime:0.001070s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:11:01+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/follows/index?addtabs=1&sort=status+asc%2Cid&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599901860556
+[运行时间：0.065549s] [吞吐率：15.26req/s] [内存消耗：7,415.55kb] [文件加载：141]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000544s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000728s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000557s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000586s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000968s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_follows` [ RunTime:0.001614s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_users` [ RunTime:0.000804s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_follows` `follows` INNER JOIN `b_users` `users` ON `follows`.`user_id`=`users`.`id` INNER JOIN `b_users` `users2` ON `follows`.`followed_user_id`=`users2`.`id` ORDER BY `follows`.`status` ASC,`follows`.`id` LIMIT 1 [ RunTime:0.000397s ]
+[ sql ] [ SQL ] SELECT `follows`.`id`,`follows`.`user_id`,`follows`.`followed_user_id`,`follows`.`status`,`follows`.`updated_at`,`follows`.`created_at`,users.id AS users__id,users.wx_openid AS users__wx_openid,users.wb_openid AS users__wb_openid,users.qq_openid AS users__qq_openid,users.headimgurl AS users__headimgurl,users.nickname AS users__nickname,users.sex AS users__sex,users.birthday AS users__birthday,users.province AS users__province,users.city AS users__city,users.country AS users__country,users.phone AS users__phone,users.pass AS users__pass,users.salt AS users__salt,users.mizuan AS users__mizuan,users.mibi AS users__mibi,users.r_mibi AS users__r_mibi,users.mili AS users__mili,users.mlz AS users__mlz,users.jinbi AS users__jinbi,users.name AS users__name,users.idno AS users__idno,users.is_idcard AS users__is_idcard,users.constellation AS users__constellation,users.is_sign AS users__is_sign,users.scale AS users__scale,users.is_leader AS users__is_leader,users.mykeep AS users__mykeep,users.token AS users__token,users.status AS users__status,users.locktime AS users__locktime,users.ry_uid AS users__ry_uid,users.ry_token AS users__ry_token,users.ali_account AS users__ali_account,users.ali_user_id AS users__ali_user_id,users.ali_avatar AS users__ali_avatar,users.ali_nick_name AS users__ali_nick_name,users.district AS users__district,users.dress_4 AS users__dress_4,users.dress_5 AS users__dress_5,users.dress_6 AS users__dress_6,users.dress_7 AS users__dress_7,users.login_ip AS users__login_ip,users.created_at AS users__created_at,users.updated_at AS users__updated_at,users.cp_card AS users__cp_card,users.keys_num AS users__keys_num,users.points AS users__points,users.is_points_first AS users__is_points_first,users.system AS users__system,users.channel AS users__channel,users.isOnline AS users__isOnline,users.img_1 AS users__img_1,users.img_2 AS users__img_2,users.img_3 AS users__img_3,users.device_token AS users__device_token,users2.id AS users2__id,users2.wx_openid AS users2__wx_openid,users2.wb_openid AS users2__wb_openid,users2.qq_openid AS users2__qq_openid,users2.headimgurl AS users2__headimgurl,users2.nickname AS users2__nickname,users2.sex AS users2__sex,users2.birthday AS users2__birthday,users2.province AS users2__province,users2.city AS users2__city,users2.country AS users2__country,users2.phone AS users2__phone,users2.pass AS users2__pass,users2.salt AS users2__salt,users2.mizuan AS users2__mizuan,users2.mibi AS users2__mibi,users2.r_mibi AS users2__r_mibi,users2.mili AS users2__mili,users2.mlz AS users2__mlz,users2.jinbi AS users2__jinbi,users2.name AS users2__name,users2.idno AS users2__idno,users2.is_idcard AS users2__is_idcard,users2.constellation AS users2__constellation,users2.is_sign AS users2__is_sign,users2.scale AS users2__scale,users2.is_leader AS users2__is_leader,users2.mykeep AS users2__mykeep,users2.token AS users2__token,users2.status AS users2__status,users2.locktime AS users2__locktime,users2.ry_uid AS users2__ry_uid,users2.ry_token AS users2__ry_token,users2.ali_account AS users2__ali_account,users2.ali_user_id AS users2__ali_user_id,users2.ali_avatar AS users2__ali_avatar,users2.ali_nick_name AS users2__ali_nick_name,users2.district AS users2__district,users2.dress_4 AS users2__dress_4,users2.dress_5 AS users2__dress_5,users2.dress_6 AS users2__dress_6,users2.dress_7 AS users2__dress_7,users2.login_ip AS users2__login_ip,users2.created_at AS users2__created_at,users2.updated_at AS users2__updated_at,users2.cp_card AS users2__cp_card,users2.keys_num AS users2__keys_num,users2.points AS users2__points,users2.is_points_first AS users2__is_points_first,users2.system AS users2__system,users2.channel AS users2__channel,users2.isOnline AS users2__isOnline,users2.img_1 AS users2__img_1,users2.img_2 AS users2__img_2,users2.img_3 AS users2__img_3,users2.device_token AS users2__device_token FROM `b_follows` `follows` INNER JOIN `b_users` `users` ON `follows`.`user_id`=`users`.`id` INNER JOIN `b_users` `users2` ON `follows`.`followed_user_id`=`users2`.`id` ORDER BY `follows`.`status` ASC,`follows`.`id` LIMIT 0,10 [ RunTime:0.000818s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:11:01+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/faceorder?addtabs=1
+[运行时间：0.062827s] [吞吐率：15.92req/s] [内存消耗：7,244.23kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000578s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000831s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000435s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000728s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001497s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'usersmanage/faceorder' LIMIT 1 [ RunTime:0.000970s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:11:02+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/likes/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599901861409
+[运行时间：0.067887s] [吞吐率：14.73req/s] [内存消耗：7,465.45kb] [文件加载：142]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000358s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000784s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000408s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000626s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001313s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_likes` [ RunTime:0.001272s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_users` [ RunTime:0.000817s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_dynamics` [ RunTime:0.000699s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_likes` `likes` INNER JOIN `b_users` `users` ON `likes`.`user_id`=`users`.`id` INNER JOIN `b_dynamics` `dynamics` ON `likes`.`target_id`=`dynamics`.`id` WHERE  (  1=1 and likes.type = 1 ) ORDER BY `likes`.`id` DESC LIMIT 1 [ RunTime:0.000327s ]
+[ sql ] [ SQL ] SELECT `likes`.`id`,`likes`.`type`,`likes`.`user_id`,`likes`.`target_id`,`likes`.`is_read`,`likes`.`addtime`,users.id AS users__id,users.wx_openid AS users__wx_openid,users.wb_openid AS users__wb_openid,users.qq_openid AS users__qq_openid,users.headimgurl AS users__headimgurl,users.nickname AS users__nickname,users.sex AS users__sex,users.birthday AS users__birthday,users.province AS users__province,users.city AS users__city,users.country AS users__country,users.phone AS users__phone,users.pass AS users__pass,users.salt AS users__salt,users.mizuan AS users__mizuan,users.mibi AS users__mibi,users.r_mibi AS users__r_mibi,users.mili AS users__mili,users.mlz AS users__mlz,users.jinbi AS users__jinbi,users.name AS users__name,users.idno AS users__idno,users.is_idcard AS users__is_idcard,users.constellation AS users__constellation,users.is_sign AS users__is_sign,users.scale AS users__scale,users.is_leader AS users__is_leader,users.mykeep AS users__mykeep,users.token AS users__token,users.status AS users__status,users.locktime AS users__locktime,users.ry_uid AS users__ry_uid,users.ry_token AS users__ry_token,users.ali_account AS users__ali_account,users.ali_user_id AS users__ali_user_id,users.ali_avatar AS users__ali_avatar,users.ali_nick_name AS users__ali_nick_name,users.district AS users__district,users.dress_4 AS users__dress_4,users.dress_5 AS users__dress_5,users.dress_6 AS users__dress_6,users.dress_7 AS users__dress_7,users.login_ip AS users__login_ip,users.created_at AS users__created_at,users.updated_at AS users__updated_at,users.cp_card AS users__cp_card,users.keys_num AS users__keys_num,users.points AS users__points,users.is_points_first AS users__is_points_first,users.system AS users__system,users.channel AS users__channel,users.isOnline AS users__isOnline,users.img_1 AS users__img_1,users.img_2 AS users__img_2,users.img_3 AS users__img_3,users.device_token AS users__device_token,dynamics.id AS dynamics__id,dynamics.user_id AS dynamics__user_id,dynamics.image AS dynamics__image,dynamics.audio AS dynamics__audio,dynamics.audio_time AS dynamics__audio_time,dynamics.video AS dynamics__video,dynamics.tags AS dynamics__tags,dynamics.content AS dynamics__content,dynamics.is_top AS dynamics__is_top,dynamics.is_tj AS dynamics__is_tj,dynamics.praise AS dynamics__praise,dynamics.reads AS dynamics__reads,dynamics.share AS dynamics__share,dynamics.addtime AS dynamics__addtime,dynamics.updated_at AS dynamics__updated_at,dynamics.created_at AS dynamics__created_at,dynamics.awesome AS dynamics__awesome,dynamics.collection AS dynamics__collection FROM `b_likes` `likes` INNER JOIN `b_users` `users` ON `likes`.`user_id`=`users`.`id` INNER JOIN `b_dynamics` `dynamics` ON `likes`.`target_id`=`dynamics`.`id` WHERE  (  1=1 and likes.type = 1 ) ORDER BY `likes`.`id` DESC LIMIT 0,10 [ RunTime:0.001101s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:11:02+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/faceorder/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599901861903
+[运行时间：0.063824s] [吞吐率：15.67req/s] [内存消耗：7,379.08kb] [文件加载：141]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000486s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000834s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000450s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000840s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000995s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_face_order` [ RunTime:0.001151s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_users` [ RunTime:0.000931s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_face_order` `faceorder` INNER JOIN `b_users` `users` ON `faceorder`.`user_id`=`users`.`id` ORDER BY `faceorder`.`id` DESC LIMIT 1 [ RunTime:0.000360s ]
+[ sql ] [ SQL ] SELECT `faceorder`.`id`,`faceorder`.`user_id`,`faceorder`.`order_no`,`faceorder`.`name`,`faceorder`.`idno`,`faceorder`.`certify_id`,`faceorder`.`status`,`faceorder`.`addtime`,`faceorder`.`finish_time`,users.id AS users__id,users.wx_openid AS users__wx_openid,users.wb_openid AS users__wb_openid,users.qq_openid AS users__qq_openid,users.headimgurl AS users__headimgurl,users.nickname AS users__nickname,users.sex AS users__sex,users.birthday AS users__birthday,users.province AS users__province,users.city AS users__city,users.country AS users__country,users.phone AS users__phone,users.pass AS users__pass,users.salt AS users__salt,users.mizuan AS users__mizuan,users.mibi AS users__mibi,users.r_mibi AS users__r_mibi,users.mili AS users__mili,users.mlz AS users__mlz,users.jinbi AS users__jinbi,users.name AS users__name,users.idno AS users__idno,users.is_idcard AS users__is_idcard,users.constellation AS users__constellation,users.is_sign AS users__is_sign,users.scale AS users__scale,users.is_leader AS users__is_leader,users.mykeep AS users__mykeep,users.token AS users__token,users.status AS users__status,users.locktime AS users__locktime,users.ry_uid AS users__ry_uid,users.ry_token AS users__ry_token,users.ali_account AS users__ali_account,users.ali_user_id AS users__ali_user_id,users.ali_avatar AS users__ali_avatar,users.ali_nick_name AS users__ali_nick_name,users.district AS users__district,users.dress_4 AS users__dress_4,users.dress_5 AS users__dress_5,users.dress_6 AS users__dress_6,users.dress_7 AS users__dress_7,users.login_ip AS users__login_ip,users.created_at AS users__created_at,users.updated_at AS users__updated_at,users.cp_card AS users__cp_card,users.keys_num AS users__keys_num,users.points AS users__points,users.is_points_first AS users__is_points_first,users.system AS users__system,users.channel AS users__channel,users.isOnline AS users__isOnline,users.img_1 AS users__img_1,users.img_2 AS users__img_2,users.img_3 AS users__img_3,users.device_token AS users__device_token FROM `b_face_order` `faceorder` INNER JOIN `b_users` `users` ON `faceorder`.`user_id`=`users`.`id` ORDER BY `faceorder`.`id` DESC LIMIT 0,10 [ RunTime:0.001466s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:11:02+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/leader?addtabs=1
+[运行时间：0.062877s] [吞吐率：15.90req/s] [内存消耗：7,241.30kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000468s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000680s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000587s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000942s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001167s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'usersmanage/leader' LIMIT 1 [ RunTime:0.000839s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:11:03+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/leader/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599901863008
+[运行时间：0.064471s] [吞吐率：15.51req/s] [内存消耗：7,420.61kb] [文件加载：141]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000435s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000658s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000512s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000681s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001084s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_leader` [ RunTime:0.001243s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_users` [ RunTime:0.000814s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_leader` `leader` INNER JOIN `b_users` `users` ON `leader`.`user_id`=`users`.`id` INNER JOIN `b_users` `users2` ON `leader`.`uid`=`users2`.`id` ORDER BY `leader`.`id` DESC LIMIT 1 [ RunTime:0.000368s ]
+[ sql ] [ SQL ] SELECT `leader`.`id`,`leader`.`uid`,`leader`.`user_id`,`leader`.`scale`,`leader`.`status`,`leader`.`addtime`,`leader`.`updatetime`,users.id AS users__id,users.wx_openid AS users__wx_openid,users.wb_openid AS users__wb_openid,users.qq_openid AS users__qq_openid,users.headimgurl AS users__headimgurl,users.nickname AS users__nickname,users.sex AS users__sex,users.birthday AS users__birthday,users.province AS users__province,users.city AS users__city,users.country AS users__country,users.phone AS users__phone,users.pass AS users__pass,users.salt AS users__salt,users.mizuan AS users__mizuan,users.mibi AS users__mibi,users.r_mibi AS users__r_mibi,users.mili AS users__mili,users.mlz AS users__mlz,users.jinbi AS users__jinbi,users.name AS users__name,users.idno AS users__idno,users.is_idcard AS users__is_idcard,users.constellation AS users__constellation,users.is_sign AS users__is_sign,users.scale AS users__scale,users.is_leader AS users__is_leader,users.mykeep AS users__mykeep,users.token AS users__token,users.status AS users__status,users.locktime AS users__locktime,users.ry_uid AS users__ry_uid,users.ry_token AS users__ry_token,users.ali_account AS users__ali_account,users.ali_user_id AS users__ali_user_id,users.ali_avatar AS users__ali_avatar,users.ali_nick_name AS users__ali_nick_name,users.district AS users__district,users.dress_4 AS users__dress_4,users.dress_5 AS users__dress_5,users.dress_6 AS users__dress_6,users.dress_7 AS users__dress_7,users.login_ip AS users__login_ip,users.created_at AS users__created_at,users.updated_at AS users__updated_at,users.cp_card AS users__cp_card,users.keys_num AS users__keys_num,users.points AS users__points,users.is_points_first AS users__is_points_first,users.system AS users__system,users.channel AS users__channel,users.isOnline AS users__isOnline,users.img_1 AS users__img_1,users.img_2 AS users__img_2,users.img_3 AS users__img_3,users.device_token AS users__device_token,users2.id AS users2__id,users2.wx_openid AS users2__wx_openid,users2.wb_openid AS users2__wb_openid,users2.qq_openid AS users2__qq_openid,users2.headimgurl AS users2__headimgurl,users2.nickname AS users2__nickname,users2.sex AS users2__sex,users2.birthday AS users2__birthday,users2.province AS users2__province,users2.city AS users2__city,users2.country AS users2__country,users2.phone AS users2__phone,users2.pass AS users2__pass,users2.salt AS users2__salt,users2.mizuan AS users2__mizuan,users2.mibi AS users2__mibi,users2.r_mibi AS users2__r_mibi,users2.mili AS users2__mili,users2.mlz AS users2__mlz,users2.jinbi AS users2__jinbi,users2.name AS users2__name,users2.idno AS users2__idno,users2.is_idcard AS users2__is_idcard,users2.constellation AS users2__constellation,users2.is_sign AS users2__is_sign,users2.scale AS users2__scale,users2.is_leader AS users2__is_leader,users2.mykeep AS users2__mykeep,users2.token AS users2__token,users2.status AS users2__status,users2.locktime AS users2__locktime,users2.ry_uid AS users2__ry_uid,users2.ry_token AS users2__ry_token,users2.ali_account AS users2__ali_account,users2.ali_user_id AS users2__ali_user_id,users2.ali_avatar AS users2__ali_avatar,users2.ali_nick_name AS users2__ali_nick_name,users2.district AS users2__district,users2.dress_4 AS users2__dress_4,users2.dress_5 AS users2__dress_5,users2.dress_6 AS users2__dress_6,users2.dress_7 AS users2__dress_7,users2.login_ip AS users2__login_ip,users2.created_at AS users2__created_at,users2.updated_at AS users2__updated_at,users2.cp_card AS users2__cp_card,users2.keys_num AS users2__keys_num,users2.points AS users2__points,users2.is_points_first AS users2__is_points_first,users2.system AS users2__system,users2.channel AS users2__channel,users2.isOnline AS users2__isOnline,users2.img_1 AS users2__img_1,users2.img_2 AS users2__img_2,users2.img_3 AS users2__img_3,users2.device_token AS users2__device_token FROM `b_leader` `leader` INNER JOIN `b_users` `users` ON `leader`.`user_id`=`users`.`id` INNER JOIN `b_users` `users2` ON `leader`.`uid`=`users2`.`id` ORDER BY `leader`.`id` DESC LIMIT 0,10 [ RunTime:0.000758s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:11:06+08:00 ] 183.199.121.239 GET oya.pub/admin_d75KABNWAWSEWWER.php/addon?addtabs=1
+[运行时间：0.066686s] [吞吐率：15.00req/s] [内存消耗：7,427.45kb] [文件加载：146]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000526s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000742s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000418s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000890s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001051s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'addon' LIMIT 1 [ RunTime:0.000876s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:14:06+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/officialsmanage/onepage?ref=addtabs
+[运行时间：0.054247s] [吞吐率：18.43req/s] [内存消耗：6,781.09kb] [文件加载：131]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000546s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000878s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000473s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000788s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001041s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:14:08+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/index/index
+[运行时间：2.806686s] [吞吐率：0.36req/s] [内存消耗：7,892.41kb] [文件加载：149]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000476s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000837s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000463s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.001063s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001005s ]
+[ sql ] [ SQL ] SELECT * FROM `b_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh` DESC [ RunTime:0.001348s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `b_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.001175s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:14:09+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/officialsmanage/onepage?addtabs=1
+[运行时间：0.058657s] [吞吐率：17.05req/s] [内存消耗：7,250.41kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000396s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000665s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000367s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000935s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'officialsmanage/onepage' LIMIT 1 [ RunTime:0.000721s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:14:09+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/dashboard?addtabs=1
+[运行时间：0.117106s] [吞吐率：8.54req/s] [内存消耗：7,439.27kb] [文件加载：139]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000451s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000739s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000379s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000577s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000922s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_users` [ RunTime:0.001493s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` LIMIT 1 [ RunTime:0.000274s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  (  created_at>=date(now()) and created_at<DATE_ADD(date(now()),INTERVAL 1 DAY) ) LIMIT 1 [ RunTime:0.000315s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_order` [ RunTime:0.000623s ]
+[ sql ] [ SQL ] SELECT SUM(price) AS tp_sum FROM `b_order` WHERE  (  status = 2 ) LIMIT 1 [ RunTime:0.003723s ]
+[ sql ] [ SQL ] SELECT SUM(price) AS tp_sum FROM `b_order` WHERE  (  status = 2 and addtime>=1599840000 and addtime < 1599926399 ) LIMIT 1 [ RunTime:0.003359s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_tixian` [ RunTime:0.000637s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `b_tixian` WHERE  (  status = 1 ) LIMIT 1 [ RunTime:0.000657s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `b_tixian` WHERE  (  status = 1 and addtime>=1599840000 and addtime < 1599926399 ) LIMIT 1 [ RunTime:0.000675s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `b_tixian` WHERE  (  status = 2 ) LIMIT 1 [ RunTime:0.000668s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `b_tixian` WHERE  (  status = 2 and tx_time>=1599840000 and tx_time < 1599926399 ) LIMIT 1 [ RunTime:0.000490s ]
+[ sql ] [ SQL ] SELECT SUM(mizuan) AS tp_sum FROM `b_users` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000223s ]
+[ sql ] [ SQL ] SELECT SUM(mibi) AS tp_sum FROM `b_users` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000227s ]
+[ sql ] [ SQL ] SELECT SUM(r_mibi) AS tp_sum FROM `b_users` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000226s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'guanfang' LIMIT 1 [ RunTime:0.000194s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = '360' LIMIT 1 [ RunTime:0.000924s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'huawei' LIMIT 1 [ RunTime:0.000207s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'xiaomi' LIMIT 1 [ RunTime:0.000240s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'oppo' LIMIT 1 [ RunTime:0.000282s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'vivo' LIMIT 1 [ RunTime:0.000253s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'ali' LIMIT 1 [ RunTime:0.000223s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'baidu' LIMIT 1 [ RunTime:0.000211s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'yingyongbao' LIMIT 1 [ RunTime:0.000399s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'sougou' LIMIT 1 [ RunTime:0.000241s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'qita' LIMIT 1 [ RunTime:0.000233s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'lianxiang' LIMIT 1 [ RunTime:0.000305s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'meizu' LIMIT 1 [ RunTime:0.000222s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'sanxing' LIMIT 1 [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'weizhi' LIMIT 1 [ RunTime:0.000199s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'landie' LIMIT 1 [ RunTime:0.000218s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'landie01' LIMIT 1 [ RunTime:0.000291s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'landie02' LIMIT 1 [ RunTime:0.000364s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'landie03' LIMIT 1 [ RunTime:0.000260s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'landie04' LIMIT 1 [ RunTime:0.000217s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'landie05' LIMIT 1 [ RunTime:0.000196s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_tongji` [ RunTime:0.000710s ]
+[ sql ] [ SQL ] SELECT `id`,`logtime`,`addtime`,`register`,`active`,`recharge`,`tixian` FROM `b_tongji` WHERE  (  logtime >= '2020-08-27' ) ORDER BY `logtime` ASC [ RunTime:0.000297s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.000315s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:14:12+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/officialsmanage/onepage/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599902049426
+[运行时间：0.062483s] [吞吐率：16.00req/s] [内存消耗：7,205.63kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000386s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000690s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000430s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000630s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_one_page` [ RunTime:0.001214s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_one_page` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000273s ]
+[ sql ] [ SQL ] SELECT * FROM `b_one_page` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000349s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:14:14+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/officialsmanage/onepage/add?dialog=1
+[运行时间：0.059809s] [吞吐率：16.72req/s] [内存消耗：7,575.35kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000495s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000701s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000379s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000685s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001407s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:14:37+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/officialsmanage/onepage/edit/ids/13?dialog=1
+[运行时间：0.062002s] [吞吐率：16.13req/s] [内存消耗：7,274.88kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000417s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000678s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000338s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000562s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000947s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_one_page` [ RunTime:0.001323s ]
+[ sql ] [ SQL ] SELECT * FROM `b_one_page` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000315s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:16:40+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/officialsmanage/onepage?addtabs=1
+[运行时间：0.060167s] [吞吐率：16.62req/s] [内存消耗：7,050.56kb] [文件加载：136]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000495s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000775s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000533s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000806s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001367s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'officialsmanage/onepage' LIMIT 1 [ RunTime:0.000776s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:16:41+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/officialsmanage/onepage/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599902179752
+[运行时间：0.066193s] [吞吐率：15.11req/s] [内存消耗：7,205.37kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000525s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000819s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000487s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000849s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001134s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_one_page` [ RunTime:0.001199s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_one_page` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000301s ]
+[ sql ] [ SQL ] SELECT * FROM `b_one_page` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000471s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:16:42+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/officialsmanage/feedback?addtabs=1
+[运行时间：0.077967s] [吞吐率：12.83req/s] [内存消耗：7,239.34kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000597s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000896s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000560s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000619s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001113s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'officialsmanage/feedback' LIMIT 1 [ RunTime:0.000923s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:16:43+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/vipauth?addtabs=1
+[运行时间：0.064408s] [吞吐率：15.53req/s] [内存消耗：7,240.42kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000574s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000990s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000527s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000701s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001130s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'usersmanage/vipauth' LIMIT 1 [ RunTime:0.000946s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:16:43+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/officialsmanage/feedback/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599902181072
+[运行时间：0.063493s] [吞吐率：15.75req/s] [内存消耗：7,369.89kb] [文件加载：141]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000585s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000890s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000499s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000641s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001005s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_feedback` [ RunTime:0.000985s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_users` [ RunTime:0.000872s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_feedback` `feedback` INNER JOIN `b_users` `users` ON `feedback`.`user_id`=`users`.`id` ORDER BY `feedback`.`id` DESC LIMIT 1 [ RunTime:0.000355s ]
+[ sql ] [ SQL ] SELECT `feedback`.`id`,`feedback`.`user_id`,`feedback`.`content`,`feedback`.`img`,`feedback`.`status`,`feedback`.`addtime`,users.id AS users__id,users.wx_openid AS users__wx_openid,users.wb_openid AS users__wb_openid,users.qq_openid AS users__qq_openid,users.headimgurl AS users__headimgurl,users.nickname AS users__nickname,users.sex AS users__sex,users.birthday AS users__birthday,users.province AS users__province,users.city AS users__city,users.country AS users__country,users.phone AS users__phone,users.pass AS users__pass,users.salt AS users__salt,users.mizuan AS users__mizuan,users.mibi AS users__mibi,users.r_mibi AS users__r_mibi,users.mili AS users__mili,users.mlz AS users__mlz,users.jinbi AS users__jinbi,users.name AS users__name,users.idno AS users__idno,users.is_idcard AS users__is_idcard,users.constellation AS users__constellation,users.is_sign AS users__is_sign,users.scale AS users__scale,users.is_leader AS users__is_leader,users.mykeep AS users__mykeep,users.token AS users__token,users.status AS users__status,users.locktime AS users__locktime,users.ry_uid AS users__ry_uid,users.ry_token AS users__ry_token,users.ali_account AS users__ali_account,users.ali_user_id AS users__ali_user_id,users.ali_avatar AS users__ali_avatar,users.ali_nick_name AS users__ali_nick_name,users.district AS users__district,users.dress_4 AS users__dress_4,users.dress_5 AS users__dress_5,users.dress_6 AS users__dress_6,users.dress_7 AS users__dress_7,users.login_ip AS users__login_ip,users.created_at AS users__created_at,users.updated_at AS users__updated_at,users.cp_card AS users__cp_card,users.keys_num AS users__keys_num,users.points AS users__points,users.is_points_first AS users__is_points_first,users.system AS users__system,users.channel AS users__channel,users.isOnline AS users__isOnline,users.img_1 AS users__img_1,users.img_2 AS users__img_2,users.img_3 AS users__img_3,users.device_token AS users__device_token FROM `b_feedback` `feedback` INNER JOIN `b_users` `users` ON `feedback`.`user_id`=`users`.`id` ORDER BY `feedback`.`id` DESC LIMIT 0,10 [ RunTime:0.000574s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:16:43+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/Vipauth/vip_auth_type
+[运行时间：0.055220s] [吞吐率：18.11req/s] [内存消耗：7,278.14kb] [文件加载：135]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000367s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000727s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000355s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000587s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001324s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:16:43+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/vipauth/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599902181727
+[运行时间：0.059982s] [吞吐率：16.67req/s] [内存消耗：7,150.40kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000414s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000707s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000393s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000657s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000965s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_vip_auth` [ RunTime:0.001081s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_vip_auth` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000274s ]
+[ sql ] [ SQL ] SELECT * FROM `b_vip_auth` ORDER BY `type` ASC,`id` ASC,`id` DESC LIMIT 0,10 [ RunTime:0.000212s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:16:46+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/vipauth/detail/ids/1?dialog=1
+[运行时间：0.063177s] [吞吐率：15.83req/s] [内存消耗：7,157.82kb] [文件加载：137]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000578s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000727s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000376s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000565s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001101s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_vip_auth` [ RunTime:0.001282s ]
+[ sql ] [ SQL ] SELECT * FROM `b_vip_auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000391s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:16:49+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/vip?addtabs=1
+[运行时间：0.063362s] [吞吐率：15.78req/s] [内存消耗：7,246.54kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000542s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000738s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000518s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000708s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001030s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'usersmanage/vip' LIMIT 1 [ RunTime:0.000804s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'usersmanage/vip' LIMIT 1 [ RunTime:0.000473s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:16:50+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/Vip/vip_type
+[运行时间：0.057373s] [吞吐率：17.43req/s] [内存消耗：7,281.13kb] [文件加载：135]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000374s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000707s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000367s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000644s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001254s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:16:50+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/vip/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599902188278
+[运行时间：0.068811s] [吞吐率：14.53req/s] [内存消耗：7,150.43kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000503s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000745s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000581s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000718s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001268s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_vip` [ RunTime:0.001095s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_vip` WHERE  (  1 = 1 ) LIMIT 1 [ RunTime:0.000247s ]
+[ sql ] [ SQL ] SELECT * FROM `b_vip` WHERE  (  1 = 1 ) LIMIT 0,10 [ RunTime:0.000293s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:18:24+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/vip/edit/ids/1?dialog=1
+[运行时间：0.063420s] [吞吐率：15.77req/s] [内存消耗：7,261.38kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000474s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000796s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000381s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000538s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000870s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_vip` [ RunTime:0.001426s ]
+[ sql ] [ SQL ] SELECT * FROM `b_vip` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001751s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:18:24+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/vip/index?addtabs=1&search=&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599902188279
+[运行时间：0.064411s] [吞吐率：15.53req/s] [内存消耗：7,150.80kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000557s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000789s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000458s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000781s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001094s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_vip` [ RunTime:0.001229s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_vip` WHERE  (  1 = 1 ) LIMIT 1 [ RunTime:0.000443s ]
+[ sql ] [ SQL ] SELECT * FROM `b_vip` WHERE  (  1 = 1 ) LIMIT 0,10 [ RunTime:0.000266s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:18:41+08:00 ] 171.8.190.205 POST oya.pub/admin_d75KABNWAWSEWWER.php/Ajax/upload/?filepath=/vip/20200912/
+[运行时间：0.074146s] [吞吐率：13.49req/s] [内存消耗：6,214.26kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000589s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_attachment` [ RunTime:0.000900s ]
+[ sql ] [ SQL ] SELECT * FROM `b_attachment` WHERE  `url` = '/upload/vip/20200912/cf910557efed18c41ac4e81256cee060.jpg' LIMIT 1 [ RunTime:0.000662s ]
+[ sql ] [ SQL ] INSERT INTO `b_attachment` (`admin_id` , `filesize` , `imagewidth` , `imageheight` , `imagetype` , `mimetype` , `url` , `uploadtime` , `storage` , `sha1` , `extparam` , `createtime` , `updatetime`) VALUES (1 , 161232 , '558' , '641' , 'jpg' , 'image/jpeg' , '/upload/vip/20200912/cf910557efed18c41ac4e81256cee060.jpg' , 1599902321 , 'local' , '8b4b1c741be0b5ee957a3b7f39b608a886956bb4' , '{\"name\":\"\\u5fae\\u4fe1\\u56fe\\u7247_20200818134420.jpg\"}' , 1599902321 , 1599902321) [ RunTime:0.003547s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_admin_log` [ RunTime:0.000850s ]
+[ sql ] [ SQL ] INSERT INTO `b_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"filepath\":\"\\/vip\\/20200912\\/\",\"name\":\"\\u5fae\\u4fe1\\u56fe\\u7247_20200818134420.jpg\"}' , '/admin_d75KABNWAWSEWWER.php/Ajax/upload/?filepath=/vip/20200912/' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36' , '171.8.190.205' , 1599902321) [ RunTime:0.003178s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:18:43+08:00 ] 171.8.190.205 POST oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/vip/edit/ids/1?dialog=1
+[运行时间：0.064434s] [吞吐率：15.52req/s] [内存消耗：7,153.91kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000556s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000721s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000393s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000914s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_vip` [ RunTime:0.001233s ]
+[ sql ] [ SQL ] SELECT * FROM `b_vip` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000326s ]
+[ sql ] [ SQL ] UPDATE `b_vip`  SET `level`=0,`exp`=0,`mizuan`=0,`rmb`=0,`img`='/upload/vip/20200912/cf910557efed18c41ac4e81256cee060.jpg'  WHERE  `id` = 1 [ RunTime:0.000344s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_admin_log` [ RunTime:0.000594s ]
+[ sql ] [ SQL ] INSERT INTO `b_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('网站管理 等级管理 编辑' , '{\"dialog\":\"1\",\"row\":{\"type\":\"1\",\"level\":\"0\",\"exp\":\"0\",\"mizuan\":\"0\",\"rmb\":\"0\",\"img\":\"\\/upload\\/vip\\/20200912\\/cf910557efed18c41ac4e81256cee060.jpg\",\"addtime\":\"2019-07-13 11:27:40\"},\"ids\":\"1\"}' , '/admin_d75KABNWAWSEWWER.php/usersmanage/vip/edit/ids/1?dialog=1' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36' , '171.8.190.205' , 1599902323) [ RunTime:0.003243s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:18:43+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/vip/index?addtabs=1&search=&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599902188280
+[运行时间：0.066962s] [吞吐率：14.93req/s] [内存消耗：7,150.78kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000487s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000701s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000702s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000770s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000993s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_vip` [ RunTime:0.001310s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_vip` WHERE  (  1 = 1 ) LIMIT 1 [ RunTime:0.000262s ]
+[ sql ] [ SQL ] SELECT * FROM `b_vip` WHERE  (  1 = 1 ) LIMIT 0,10 [ RunTime:0.000358s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:19:18+08:00 ] 171.8.190.205 POST oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/vip/del/ids/10
+[运行时间：0.066921s] [吞吐率：14.94req/s] [内存消耗：7,147.11kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000453s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000756s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000652s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000797s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001155s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_vip` [ RunTime:0.001223s ]
+[ sql ] [ SQL ] SELECT * FROM `b_vip` WHERE  `id` IN (10) [ RunTime:0.000446s ]
+[ sql ] [ SQL ] DELETE FROM `b_vip`    WHERE  `id` = 10 [ RunTime:0.000349s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_admin_log` [ RunTime:0.000678s ]
+[ sql ] [ SQL ] INSERT INTO `b_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('网站管理 等级管理 删除' , '{\"action\":\"del\",\"ids\":\"10\",\"params\":\"\"}' , '/admin_d75KABNWAWSEWWER.php/usersmanage/vip/del/ids/10' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36' , '171.8.190.205' , 1599902358) [ RunTime:0.003473s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:19:18+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/vip/index?addtabs=1&search=&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599902188281
+[运行时间：0.062594s] [吞吐率：15.98req/s] [内存消耗：7,150.78kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000975s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000813s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000379s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000733s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001031s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_vip` [ RunTime:0.001187s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_vip` WHERE  (  1 = 1 ) LIMIT 1 [ RunTime:0.000304s ]
+[ sql ] [ SQL ] SELECT * FROM `b_vip` WHERE  (  1 = 1 ) LIMIT 0,10 [ RunTime:0.000248s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:19:29+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/officialsmanage/officials?addtabs=1
+[运行时间：0.060482s] [吞吐率：16.53req/s] [内存消耗：7,226.36kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000471s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000793s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000649s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000730s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001207s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'officialsmanage/officials' LIMIT 1 [ RunTime:0.000807s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:19:30+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/officialsmanage/officials/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599902348749
+[运行时间：0.058148s] [吞吐率：17.20req/s] [内存消耗：7,127.97kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000377s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000718s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000419s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000585s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000920s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_officials` [ RunTime:0.001261s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_officials` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000307s ]
+[ sql ] [ SQL ] SELECT * FROM `b_officials` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000250s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:19:32+08:00 ] 171.8.190.205 GET oya.pub/admin_d75KABNWAWSEWWER.php/officialsmanage/officials/edit/ids/3?dialog=1
+[运行时间：0.063182s] [吞吐率：15.83req/s] [内存消耗：7,239.12kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000596s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000889s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000731s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001359s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_officials` [ RunTime:0.001468s ]
+[ sql ] [ SQL ] SELECT * FROM `b_officials` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000349s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:22:00+08:00 ] 117.157.150.183 GET oya.pub/admin_d75KABNWAWSEWWER.php/financemanage/tixian/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599896308645
+[运行时间：0.069471s] [吞吐率：14.39req/s] [内存消耗：7,423.67kb] [文件加载：141]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000615s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000745s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000394s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000550s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000924s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_tixian` [ RunTime:0.001264s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_users` [ RunTime:0.000942s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_tixian` `tixian` INNER JOIN `b_users` `users` ON `tixian`.`user_id`=`users`.`id` ORDER BY `tixian`.`id` DESC LIMIT 1 [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SELECT `tixian`.`id`,`tixian`.`order_no`,`tixian`.`user_id`,`tixian`.`money`,`tixian`.`type`,`tixian`.`status`,`tixian`.`addtime`,`tixian`.`tx_time`,users.id AS users__id,users.wx_openid AS users__wx_openid,users.wb_openid AS users__wb_openid,users.qq_openid AS users__qq_openid,users.headimgurl AS users__headimgurl,users.nickname AS users__nickname,users.sex AS users__sex,users.birthday AS users__birthday,users.province AS users__province,users.city AS users__city,users.country AS users__country,users.phone AS users__phone,users.pass AS users__pass,users.salt AS users__salt,users.mizuan AS users__mizuan,users.mibi AS users__mibi,users.r_mibi AS users__r_mibi,users.mili AS users__mili,users.mlz AS users__mlz,users.jinbi AS users__jinbi,users.name AS users__name,users.idno AS users__idno,users.is_idcard AS users__is_idcard,users.constellation AS users__constellation,users.is_sign AS users__is_sign,users.scale AS users__scale,users.is_leader AS users__is_leader,users.mykeep AS users__mykeep,users.token AS users__token,users.status AS users__status,users.locktime AS users__locktime,users.ry_uid AS users__ry_uid,users.ry_token AS users__ry_token,users.ali_account AS users__ali_account,users.ali_user_id AS users__ali_user_id,users.ali_avatar AS users__ali_avatar,users.ali_nick_name AS users__ali_nick_name,users.district AS users__district,users.dress_4 AS users__dress_4,users.dress_5 AS users__dress_5,users.dress_6 AS users__dress_6,users.dress_7 AS users__dress_7,users.login_ip AS users__login_ip,users.created_at AS users__created_at,users.updated_at AS users__updated_at,users.cp_card AS users__cp_card,users.keys_num AS users__keys_num,users.points AS users__points,users.is_points_first AS users__is_points_first,users.system AS users__system,users.channel AS users__channel,users.isOnline AS users__isOnline,users.img_1 AS users__img_1,users.img_2 AS users__img_2,users.img_3 AS users__img_3,users.device_token AS users__device_token FROM `b_tixian` `tixian` INNER JOIN `b_users` `users` ON `tixian`.`user_id`=`users`.`id` ORDER BY `tixian`.`id` DESC LIMIT 0,10 [ RunTime:0.001177s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:22:02+08:00 ] 117.157.150.183 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/order/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599896305763
+[运行时间：0.083525s] [吞吐率：11.97req/s] [内存消耗：7,368.65kb] [文件加载：141]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000639s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000774s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000543s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000815s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001156s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_order` [ RunTime:0.001523s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_users` [ RunTime:0.000988s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_order` `order` INNER JOIN `b_users` `users` ON `order`.`user_id`=`users`.`id` ORDER BY `order`.`id` DESC LIMIT 1 [ RunTime:0.000471s ]
+[ sql ] [ SQL ] SELECT `order`.`id`,`order`.`order_no`,`order`.`user_id`,`order`.`mizuan`,`order`.`price`,`order`.`mili`,`order`.`class`,`order`.`pay_type`,`order`.`remark`,`order`.`status`,`order`.`addtime`,`order`.`paytime`,`order`.`ios_proof`,`order`.`ios_transaction_id`,users.id AS users__id,users.wx_openid AS users__wx_openid,users.wb_openid AS users__wb_openid,users.qq_openid AS users__qq_openid,users.headimgurl AS users__headimgurl,users.nickname AS users__nickname,users.sex AS users__sex,users.birthday AS users__birthday,users.province AS users__province,users.city AS users__city,users.country AS users__country,users.phone AS users__phone,users.pass AS users__pass,users.salt AS users__salt,users.mizuan AS users__mizuan,users.mibi AS users__mibi,users.r_mibi AS users__r_mibi,users.mili AS users__mili,users.mlz AS users__mlz,users.jinbi AS users__jinbi,users.name AS users__name,users.idno AS users__idno,users.is_idcard AS users__is_idcard,users.constellation AS users__constellation,users.is_sign AS users__is_sign,users.scale AS users__scale,users.is_leader AS users__is_leader,users.mykeep AS users__mykeep,users.token AS users__token,users.status AS users__status,users.locktime AS users__locktime,users.ry_uid AS users__ry_uid,users.ry_token AS users__ry_token,users.ali_account AS users__ali_account,users.ali_user_id AS users__ali_user_id,users.ali_avatar AS users__ali_avatar,users.ali_nick_name AS users__ali_nick_name,users.district AS users__district,users.dress_4 AS users__dress_4,users.dress_5 AS users__dress_5,users.dress_6 AS users__dress_6,users.dress_7 AS users__dress_7,users.login_ip AS users__login_ip,users.created_at AS users__created_at,users.updated_at AS users__updated_at,users.cp_card AS users__cp_card,users.keys_num AS users__keys_num,users.points AS users__points,users.is_points_first AS users__is_points_first,users.system AS users__system,users.channel AS users__channel,users.isOnline AS users__isOnline,users.img_1 AS users__img_1,users.img_2 AS users__img_2,users.img_3 AS users__img_3,users.device_token AS users__device_token FROM `b_order` `order` INNER JOIN `b_users` `users` ON `order`.`user_id`=`users`.`id` ORDER BY `order`.`id` DESC LIMIT 0,10 [ RunTime:0.008116s ]
+[ sql ] [ SQL ] SELECT SUM(price) AS tp_sum FROM `b_order` `order` INNER JOIN `b_users` `users` ON `order`.`user_id`=`users`.`id` ORDER BY `order`.`id` DESC LIMIT 1 [ RunTime:0.000592s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:22:06+08:00 ] 117.157.150.183 GET oya.pub/admin_d75KABNWAWSEWWER.php/roomsmanage/emoji/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599896238220
+[运行时间：0.068865s] [吞吐率：14.52req/s] [内存消耗：7,208.28kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000466s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000683s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000352s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000621s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000940s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_emoji` [ RunTime:0.001213s ]
+[ sql ] [ SQL ] SELECT * FROM `b_emoji` WHERE  `pid` = 0 [ RunTime:0.000293s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_emoji` ORDER BY `pid` ASC LIMIT 1 [ RunTime:0.000381s ]
+[ sql ] [ SQL ] SELECT * FROM `b_emoji` ORDER BY `pid` ASC LIMIT 0,10 [ RunTime:0.000230s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_emoji` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000235s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_emoji` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000187s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_emoji` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000194s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_emoji` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000236s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_emoji` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000184s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_emoji` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000198s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_emoji` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000188s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_emoji` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000154s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_emoji` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000143s ]
+[ sql ] [ SQL ] SELECT `name` FROM `b_emoji` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000151s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:22:22+08:00 ] 171.8.189.20 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/order?ref=addtabs
+[运行时间：0.054623s] [吞吐率：18.31req/s] [内存消耗：6,805.46kb] [文件加载：131]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000584s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000866s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000688s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000830s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001263s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:22:25+08:00 ] 171.8.189.20 GET oya.pub/admin_d75KABNWAWSEWWER.php/index/index
+[运行时间：2.815921s] [吞吐率：0.36req/s] [内存消耗：7,631.97kb] [文件加载：147]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000436s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000754s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000428s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000557s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000928s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `b_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.001611s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:22:25+08:00 ] 171.8.189.20 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/order?addtabs=1
+[运行时间：0.062359s] [吞吐率：16.04req/s] [内存消耗：7,273.08kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000483s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000750s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000386s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000600s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001123s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'usersmanage/order' LIMIT 1 [ RunTime:0.000874s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:22:25+08:00 ] 171.8.189.20 GET oya.pub/admin_d75KABNWAWSEWWER.php/dashboard?addtabs=1
+[运行时间：0.119370s] [吞吐率：8.38req/s] [内存消耗：7,187.11kb] [文件加载：137]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000383s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000674s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000361s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000604s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000917s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_users` [ RunTime:0.001592s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` LIMIT 1 [ RunTime:0.000330s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  (  created_at>=date(now()) and created_at<DATE_ADD(date(now()),INTERVAL 1 DAY) ) LIMIT 1 [ RunTime:0.000260s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_order` [ RunTime:0.000645s ]
+[ sql ] [ SQL ] SELECT SUM(price) AS tp_sum FROM `b_order` WHERE  (  status = 2 ) LIMIT 1 [ RunTime:0.003847s ]
+[ sql ] [ SQL ] SELECT SUM(price) AS tp_sum FROM `b_order` WHERE  (  status = 2 and addtime>=1599840000 and addtime < 1599926399 ) LIMIT 1 [ RunTime:0.003192s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_tixian` [ RunTime:0.000695s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `b_tixian` WHERE  (  status = 1 ) LIMIT 1 [ RunTime:0.000487s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `b_tixian` WHERE  (  status = 1 and addtime>=1599840000 and addtime < 1599926399 ) LIMIT 1 [ RunTime:0.000461s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `b_tixian` WHERE  (  status = 2 ) LIMIT 1 [ RunTime:0.000441s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `b_tixian` WHERE  (  status = 2 and tx_time>=1599840000 and tx_time < 1599926399 ) LIMIT 1 [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SELECT SUM(mizuan) AS tp_sum FROM `b_users` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000188s ]
+[ sql ] [ SQL ] SELECT SUM(mibi) AS tp_sum FROM `b_users` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000189s ]
+[ sql ] [ SQL ] SELECT SUM(r_mibi) AS tp_sum FROM `b_users` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.000186s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'guanfang' LIMIT 1 [ RunTime:0.000510s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = '360' LIMIT 1 [ RunTime:0.000249s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'huawei' LIMIT 1 [ RunTime:0.000222s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'xiaomi' LIMIT 1 [ RunTime:0.000204s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'oppo' LIMIT 1 [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'vivo' LIMIT 1 [ RunTime:0.000288s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'ali' LIMIT 1 [ RunTime:0.000306s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'baidu' LIMIT 1 [ RunTime:0.000236s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'yingyongbao' LIMIT 1 [ RunTime:0.000225s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'sougou' LIMIT 1 [ RunTime:0.000217s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'qita' LIMIT 1 [ RunTime:0.000237s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'lianxiang' LIMIT 1 [ RunTime:0.000278s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'meizu' LIMIT 1 [ RunTime:0.000433s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'sanxing' LIMIT 1 [ RunTime:0.000259s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'weizhi' LIMIT 1 [ RunTime:0.000298s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'landie' LIMIT 1 [ RunTime:0.000204s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'landie01' LIMIT 1 [ RunTime:0.000308s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'landie02' LIMIT 1 [ RunTime:0.000356s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'landie03' LIMIT 1 [ RunTime:0.000271s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'landie04' LIMIT 1 [ RunTime:0.000217s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_users` WHERE  `channel` = 'landie05' LIMIT 1 [ RunTime:0.000198s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_tongji` [ RunTime:0.000863s ]
+[ sql ] [ SQL ] SELECT `id`,`logtime`,`addtime`,`register`,`active`,`recharge`,`tixian` FROM `b_tongji` WHERE  (  logtime >= '2020-08-27' ) ORDER BY `logtime` ASC [ RunTime:0.000276s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.000282s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:22:27+08:00 ] 171.8.189.20 GET oya.pub/admin_d75KABNWAWSEWWER.php/usersmanage/order/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599902524782
+[运行时间：0.074243s] [吞吐率：13.47req/s] [内存消耗：7,368.91kb] [文件加载：141]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000447s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000710s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000398s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000547s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000934s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_order` [ RunTime:0.001413s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_users` [ RunTime:0.000838s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_order` `order` INNER JOIN `b_users` `users` ON `order`.`user_id`=`users`.`id` ORDER BY `order`.`id` DESC LIMIT 1 [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SELECT `order`.`id`,`order`.`order_no`,`order`.`user_id`,`order`.`mizuan`,`order`.`price`,`order`.`mili`,`order`.`class`,`order`.`pay_type`,`order`.`remark`,`order`.`status`,`order`.`addtime`,`order`.`paytime`,`order`.`ios_proof`,`order`.`ios_transaction_id`,users.id AS users__id,users.wx_openid AS users__wx_openid,users.wb_openid AS users__wb_openid,users.qq_openid AS users__qq_openid,users.headimgurl AS users__headimgurl,users.nickname AS users__nickname,users.sex AS users__sex,users.birthday AS users__birthday,users.province AS users__province,users.city AS users__city,users.country AS users__country,users.phone AS users__phone,users.pass AS users__pass,users.salt AS users__salt,users.mizuan AS users__mizuan,users.mibi AS users__mibi,users.r_mibi AS users__r_mibi,users.mili AS users__mili,users.mlz AS users__mlz,users.jinbi AS users__jinbi,users.name AS users__name,users.idno AS users__idno,users.is_idcard AS users__is_idcard,users.constellation AS users__constellation,users.is_sign AS users__is_sign,users.scale AS users__scale,users.is_leader AS users__is_leader,users.mykeep AS users__mykeep,users.token AS users__token,users.status AS users__status,users.locktime AS users__locktime,users.ry_uid AS users__ry_uid,users.ry_token AS users__ry_token,users.ali_account AS users__ali_account,users.ali_user_id AS users__ali_user_id,users.ali_avatar AS users__ali_avatar,users.ali_nick_name AS users__ali_nick_name,users.district AS users__district,users.dress_4 AS users__dress_4,users.dress_5 AS users__dress_5,users.dress_6 AS users__dress_6,users.dress_7 AS users__dress_7,users.login_ip AS users__login_ip,users.created_at AS users__created_at,users.updated_at AS users__updated_at,users.cp_card AS users__cp_card,users.keys_num AS users__keys_num,users.points AS users__points,users.is_points_first AS users__is_points_first,users.system AS users__system,users.channel AS users__channel,users.isOnline AS users__isOnline,users.img_1 AS users__img_1,users.img_2 AS users__img_2,users.img_3 AS users__img_3,users.device_token AS users__device_token FROM `b_order` `order` INNER JOIN `b_users` `users` ON `order`.`user_id`=`users`.`id` ORDER BY `order`.`id` DESC LIMIT 0,10 [ RunTime:0.007518s ]
+[ sql ] [ SQL ] SELECT SUM(price) AS tp_sum FROM `b_order` `order` INNER JOIN `b_users` `users` ON `order`.`user_id`=`users`.`id` ORDER BY `order`.`id` DESC LIMIT 1 [ RunTime:0.000361s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:22:30+08:00 ] 171.8.189.20 GET oya.pub/admin_d75KABNWAWSEWWER.php/statismanage/tongji?addtabs=1
+[运行时间：0.060682s] [吞吐率：16.48req/s] [内存消耗：7,242.55kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000466s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000696s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000427s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000644s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000904s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'statismanage/tongji' LIMIT 1 [ RunTime:0.000797s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:22:31+08:00 ] 171.8.189.20 GET oya.pub/admin_d75KABNWAWSEWWER.php/addon?addtabs=1
+[运行时间：0.062528s] [吞吐率：15.99req/s] [内存消耗：7,205.15kb] [文件加载：144]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000435s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000689s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000664s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000789s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001205s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `b_auth_rule` WHERE  `name` = 'addon' LIMIT 1 [ RunTime:0.000770s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:22:31+08:00 ] 171.8.189.20 GET oya.pub/admin_d75KABNWAWSEWWER.php/statismanage/tongji/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1599902529549
+[运行时间：0.063996s] [吞吐率：15.63req/s] [内存消耗：7,143.27kb] [文件加载：138]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000596s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000798s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000406s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000688s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_tongji` [ RunTime:0.001858s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `b_tongji` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000244s ]
+[ sql ] [ SQL ] SELECT * FROM `b_tongji` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000249s ]
+[ sql ] [ SQL ] SELECT sum(register) as register,sum(active) as active,sum(recharge) as recharge,sum(tixian) as tixian FROM `b_tongji` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000261s ]
+---------------------------------------------------------------
+[ 2020-09-12T17:22:40+08:00 ] 171.8.189.20 GET oya.pub/admin_d75KABNWAWSEWWER.php/addon/downloaded?callback=jQuery224018647083435020306_1599902530218&sort=id&order=desc&filter=%7B%22type%22%3A%22local%22%2C%22faversion%22%3A%221.0.0.20190705_beta%22%7D&op=%7B%22type%22%3A%22%3D%22%2C%22faversion%22%3A%22%3D%22%7D&_=1599902530220
+[运行时间：2.156404s] [吞吐率：0.46req/s] [内存消耗：7,471.45kb] [文件加载：136]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000454s ] mysql:host=127.0.0.1;dbname=oya_pub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_group_access` [ RunTime:0.000712s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `b_auth_group_access` `aga` LEFT JOIN `b_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000433s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `b_auth_rule` [ RunTime:0.000584s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `b_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001015s ]

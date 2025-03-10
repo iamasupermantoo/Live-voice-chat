@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登录</title>
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #home {
+            width: 100%;
+            height: 100%;
+            padding: 30px;
+
+        }
+
+        #icon {
+            display: block;
+            margin: 0 auto;
+            margin-top: 50px;
+            width: 100px;
+            height: 100px;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 100px;
+            font-size: 16px;
+            color: #ff3e6d;
+        }
+
+        #duihuan {
+            display: block;
+            width: 77%;
+            height: 47px;
+            background-color: #ffd8e2;
+            margin: 0 auto;
+            margin-top: 70px;
+            color: #ffffff;
+            font-size: 17px;
+            line-height: 34px;
+            border-radius: 23px;
+            border-color: #ffd8e2;
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 40px;
+        }
+
+        .inputSty {
+            border: 0px;
+            border-bottom: 1px solid #eeeeee;
+            width: 100%;
+            outline-style: none;
+            padding: 10px 20px;
+            color: #999999;
+            margin: 10px 0;
+        }
+
+        .inputSty:focus {
+            color: black;
+        }
+
+        #tishi {
+            margin-left: 20px;
+            color: #ff3e6d;
+            font-size: 12px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="home">
+        <h1>登录</h1>
+        <input type="text" id="phone" class="inputSty" style="margin-top:50px;" placeholder="请输入手机号"
+            oninput="value=value.replace(/[^\d]/g,'')">
+        <input type="password" class="inputSty" placeholder="请输入密码" id="pod">
+        <p id="tishi">请输入正确密码
+
+        </p>
+        <a class="btn btn-default" href="#" role="button" id="duihuan">登录</a>
+    </div>
+
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="__STATIC__/home/js/jquery.cookie.js"></script>
+    <script>
+        $("#pod").blur(function () {
+            $("#duihuan").css("background-color", "#ff3e6d");
+        });
+        $("#pod").focus(function () {
+            if ($("#pod").val.length > 0) {
+                $("#duihuan").css("background-color", "#ff3e6d");
+            }
+        });
+        $("#duihuan").click(function () {
+            // $(location).attr('href', './myearnings.html');
+            // var phone = $("#phone").val();
+            // var pod = $("#pod").val();
+            if (phone == "" || pod == "") {
+                $("#tishi").css("display", "block");
+                $("#tishi").text("请输入正确的账号密码")
+            } else {
+                $("#tishi").css("display", "none");
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://47.92.85.75/api/login',
+                    dataType: 'json',
+                    data: { phone: $("#phone").val(), pass: $("#pod").val() },
+                    success: function (res) {
+                        $("#tishi").css("display", "block");
+                        $("#tishi").text(res.message)
+                        console.log(res.data)
+                        if (res.code == 1) {
+                            $.cookie('user', JSON.stringify(res.data), { expires: 7, path: '/' });
+                            $(location).attr('href', './income');
+                        }
+                    },
+                    error: function (jqXHR) {
+                        console.log("失败了")
+                    }
+                });
+
+            }
+        })
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        } 
+    </script>
+</body>
+
+</html>

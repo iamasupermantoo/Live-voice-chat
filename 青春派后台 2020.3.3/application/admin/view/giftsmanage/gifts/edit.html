@@ -1,0 +1,139 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" class="form-control" name="row[name]" type="text" value="{$row.name|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('礼物类型')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[type]', ['1'=>__('Nor'), '2'=>__('Hot')], $row['type'])}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Price')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-price" class="form-control" name="row[price]" type="number" value="{$row.price|htmlentities}">
+        </div>
+    </div>
+    <!--<div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Img')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-img" class="form-control" name="row[img]" type="text" value="{$row.img|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Show_img')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-show_img" class="form-control" name="row[show_img]" type="text" value="{$row.show_img|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Show_img2')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-show_img2" class="form-control" name="row[show_img2]" type="text" value="{$row.show_img2|htmlentities}">
+        </div>
+    </div>-->
+    <div class="form-group">
+        <label for="c-img" class="control-label col-xs-12 col-sm-2">{:__('Img')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-img" data-rule="" class="form-control" size="50" name="row[img]" type="text" value="{:getImg($row['img'])}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-img" class="btn btn-danger plupload" data-input-id="c-img" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-url="Ajax/upload/?filepath=/emoji/" data-preview-id="p-img"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-img" class="btn btn-primary fachoose" data-input-id="c-img" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-img"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-img"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-img" class="control-label col-xs-12 col-sm-2">{:__('Show_img')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-show_img" data-rule="" class="form-control" size="50" name="row[show_img]" type="text" value="{:getImg($row['show_img'])}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-show_img" class="btn btn-danger plupload" data-input-id="c-show_img" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-url="Ajax/upload/?filepath=/emoji/" data-preview-id="p-show_img"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-show_img" class="btn btn-primary fachoose" data-input-id="c-show_img" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-show_img"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-show_img"></ul>
+        </div>
+    </div>
+    <!--<div class="form-group">
+        <label for="c-img" class="control-label col-xs-12 col-sm-2">{:__('Show_img2')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-show_img2" data-rule="" class="form-control" size="50" name="row[show_img2]" type="text" value="{:getImg($row['show_img2'])}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-show_img2" class="btn btn-danger plupload" data-input-id="c-show_img2" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-url="Ajax/upload/?filepath=/emoji/" data-preview-id="p-show_img2"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-show_img2" class="btn btn-primary fachoose" data-input-id="c-show_img2" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-show_img2"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-show_img2"></ul>
+        </div>
+    </div>-->
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Show_img2')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-show_img2" readonly  class="form-control" name="row[show_img2]" type="text" value="{:getImg($row['show_img2'])}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-show_img2" class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button id="plupload-show_img2" class="btn btn-primary plupload" data-input-id="c-show_img2" data-url="Ajax/upload/?filepath=/emoji/"><i class="fa fa-upload"></i> {:__("上传文件")}</button>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('vip_level')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-vip_level" class="form-control" name="row[vip_level]" type="number" value="{$row.vip_level|htmlentities}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Hots')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-hot" class="form-control" name="row[hot]" type="number" value="{$row.hot|htmlentities}">
+        </div>
+    </div>
+
+
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Sort')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sort" class="form-control" name="row[sort]" type="number" value="{$row.sort|htmlentities}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('is_play')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[is_play]', ['0'=>__('不播报'), '1'=>__('全服播报')],$row['is_play'])}
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('是否上架')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[enable]', ['1'=>__('上架'), '2'=>__('下架')], $row['enable'])}
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

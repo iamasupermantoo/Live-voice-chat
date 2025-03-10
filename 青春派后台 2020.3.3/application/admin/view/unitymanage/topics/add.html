@@ -1,0 +1,42 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('是否推荐')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[recom]', ['0'=>__('非推荐'), '1'=>__('推荐')],0)}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-avatar" class="control-label col-xs-12 col-sm-2">{:__('封面')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-topic_img" data-rule="" class="form-control" size="50" name="row[topic_img]" type="text" value="">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-topic_img" class="btn btn-danger plupload" data-input-id="c-topic_img" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-url="Ajax/upload/?filepath=/topic_img/" data-preview-id="p-topic_img"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-topic_img" class="btn btn-primary fachoose" data-input-id="c-topic_img" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-topic_img"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-topic_img"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('tags')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-tags" data-rule="required" data-source="unitymanage/labels/index" data-field="name" class="form-control selectpage" name="row[tags]" type="text" value="">
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('创建时间')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input readonly id="c-created_at" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[created_at]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

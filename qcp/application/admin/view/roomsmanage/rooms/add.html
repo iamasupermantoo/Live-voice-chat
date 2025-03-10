@@ -1,0 +1,206 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Numid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-numid" data-rule="required" class="form-control" name="row[numid]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Uid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-uid" data-rule="required" data-source="usersmanage/users/index" data-field="nickname" class="form-control selectpage" name="row[uid]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Room_status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[room_status]', ['1'=>__('正常'), '2'=>__('上锁'), '3'=>__('封禁'), '4'=>__('关闭')])}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Room_type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select id="c-room_type" data-rule="required" class="form-control selectpicker" name="row[room_type]">
+                <option value="">请选择</option>
+                {foreach name="catList" item="vo"}
+                <option value="{$vo.id}">{$vo.name}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Room_name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-room_name" data-rule="required" class="form-control" name="row[room_name]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-room_cover" class="control-label col-xs-12 col-sm-2">{:__('Room_cover')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-room_cover" data-rule="" class="form-control" size="50" name="row[room_cover]" type="text" value="">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-room_cover" class="btn btn-danger plupload" data-input-id="c-room_cover" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-url="ajax/upload?filepath=/cover/{:date('Ymd')}/" data-preview-id="p-room_cover"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-room_cover" class="btn btn-primary fachoose" data-input-id="c-room_cover" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-room_cover"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-room_cover"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Room_intro')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-room_intro" class="form-control" name="row[room_intro]" type="text" value="欢迎来到我的房间玩~">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Room_pass')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-room_pass" class="form-control" name="row[room_pass]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Room_welcome')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-room_welcome" class="form-control" name="row[room_welcome]" type="text" value="~~~~~欢迎来到我的房间~~~~~~希望你玩的开心">
+        </div>
+    </div>
+    <!--<div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Roomadmin')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-roomAdmin" class="form-control " rows="5" name="row[roomAdmin]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Roomvisitor')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-roomVisitor" class="form-control " rows="5" name="row[roomVisitor]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Roomspeak')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-roomSpeak" class="form-control " rows="5" name="row[roomSpeak]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Roomjudge')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-roomJudge" class="form-control " rows="5" name="row[roomJudge]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Roomsound')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-roomSound" class="form-control " rows="5" name="row[roomSound]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Roomblack')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-roomBlack" class="form-control " rows="5" name="row[roomBlack]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Freshtime')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-freshTime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[freshTime]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    </div>-->
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Week_star')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[week_star]', ['1'=>__('是'), '2'=>__('否')],2)}
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Is_popular')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[is_popular]', ['1'=>__('热门'), '2'=>__('非热门')],2)}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Secret_chat')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[secret_chat]', ['1'=>__('推荐'), '2'=>__('非推荐')],2)}
+        </div>
+    </div>
+   <!-- <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Openid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-openid" data-rule="required" class="form-control" name="row[openid]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Room_background')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-room_background" class="form-control" name="row[room_background]" type="text">
+        </div>
+    </div>-->
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Is_top')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[is_top]', ['1'=>__('置顶'), '2'=>__('非置顶')],2)}
+        </div>
+    </div>
+    <!--<div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Microphone')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-microphone" data-rule="required" class="form-control" name="row[microphone]" type="text" value="0,0,0,0,0,0,0,0">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Is_prohibit_sound')}:</label>
+        <div class="col-xs-12 col-sm-8">
+
+            <input id="c-is_prohibit_sound" data-rule="required" class="form-control" name="row[is_prohibit_sound]" type="text" value="0,0,0,0,0,0,0,0">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Commission_proportion')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-commission_proportion" class="form-control" name="row[commission_proportion]" type="text">
+        </div>
+    </div>-->
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Super_uid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[super_uid]', ['1'=>__('可以'), '2'=>__('不可以')],2)}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Ranking')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-ranking" data-rule="required" class="form-control" name="row[ranking]" type="number" value="0">
+        </div>
+    </div>
+    <!--<div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Is_afk')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-is_afk" class="form-control" name="row[is_afk]" type="number" value="0">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Hot')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-hot" class="form-control" name="row[hot]" type="number" value="0">
+        </div>
+    </div>-->
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Created_at')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-created_at" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[created_at]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

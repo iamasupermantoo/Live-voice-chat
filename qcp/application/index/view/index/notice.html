@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>公告</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            padding: 40px;
+        }
+        p{
+            text-indent: 2em
+        }
+        .medi{
+            text-indent: 0em;
+            /* text-align: center; */
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        亲爱的米宝们，大家在使用啾咪语音的同时，发现一些功能如果不能正常使用，可以来找我们反馈，我们会及时修复调整这些问题。
+    </p>
+
+    <p style="margin-top: 20px;">
+        有什么好的建议和想法也可以告诉我们，我们也会仔细认真筛选的，好的建议与想法我们也会加入到开发计划中，我们会逐步完善每个功能，米宝们有什么反馈可以留言或者联系我们！
+
+    </p>
+    <p class="medi" style="margin-top: 20px;">--联系我们--</p>
+    {foreach name="data" item="v"}
+    <p class="medi">{$v['type']}：{$v['content']}</p>
+    {/foreach}
+    <!-- <p class="medi">官方QQ群：619215718</p>
+        <p class="medi">官方Mini号：10086</p> -->
+</body>
+
+</html>

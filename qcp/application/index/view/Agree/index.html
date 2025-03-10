@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class=""> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <title>55 - 我的CMS网站</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+
+    <link rel="stylesheet" media="screen" href="/assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" media="screen" href="/assets/libs/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" media="screen" href="/assets/libs/fastadmin-layer/dist/theme/default/layer.css"/>
+    <link rel="stylesheet" media="screen" href="/assets/addons/cms/css/swiper.min.css">
+    <link rel="stylesheet" media="screen" href="/assets/addons/cms/css/common.css?v=1565252499"/>
+
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1104524_z1zcv22ej09.css">
+
+
+
+    <!--[if lt IE 9]>
+    <script src="/libs/html5shiv.js"></script>
+    <script src="/libs/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="group-page" style="    background-color: #fff;">
+    <div class="container" id="content-container">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="article-content">
+                            <div class="article-metas text-center">
+                                <h1 class="metas-title">
+                                    {$list.name}
+                                </h1>
+                                <!-- E 标题区域 -->
+                            </div>
+                            <div class="article-text">
+                                <!-- S 正文 -->
+                                <p>
+                                    {$list.url}
+                                </p>
+                                <!-- E 正文 -->
+                            </div>
+
+
+
+                          <!--  <div class="clearfix"></div>-->
+                        </div>
+                    </div>
+                </div>
+
+                <!--S 评论列表-->
+               <!-- <div class="panel panel-default comment-list" id="comments">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">评论列表                        <small>共 0 条评论</small>
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div id="comment-container">
+                            &lt;!&ndash; S 评论列表 &ndash;&gt;
+                            <div id="commentlist">
+                                <div class="loadmore loadmore-line loadmore-nodata"><span class="loadmore-tips">暂无评论</span></div>
+                            </div>
+                            &lt;!&ndash; E 评论列表 &ndash;&gt;
+
+                            &lt;!&ndash; S 评论分页 &ndash;&gt;
+                            <div id="commentpager" class="text-center">
+                            </div>
+                            &lt;!&ndash; E 评论分页 &ndash;&gt;
+
+                            &lt;!&ndash; S 发表评论 &ndash;&gt;
+                            <div id="postcomment">
+                                <h3>发表评论 <a href="javascript:;">
+                                    <small>取消回复</small>
+                                </a></h3>
+                                <form action="/addons/cms/comment/post.html" method="post" id="postform">
+                                    <input type="hidden" name="__token__" value="2ceb1e8c5aa809d32984d9966d22220f" />            <input type="hidden" name="type" value="page"/>
+                                    <input type="hidden" name="aid" value="2"/>
+                                    <input type="hidden" name="pid" id="pid" value="0"/>
+                                    <div class="form-group">
+                                        <textarea name="content" class="form-control" disabled placeholder="请登录后再发表评论"  id="commentcontent" cols="6" rows="5" tabindex="4"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <a href="/index/user/login.html" class="btn btn-primary">登录</a>
+                                        <a href="/index/user/register.html" class="btn btn-outline-primary">注册新账号</a>
+                                    </div>
+                                </form>
+                            </div>
+                            &lt;!&ndash; E 发表评论 &ndash;&gt;
+                        </div>
+                    </div>
+                </div>-->
+                <!--E 评论列表-->
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/libs/fastadmin-layer/dist/layer.js"></script>
+    <script type="text/javascript" src="/assets/libs/art-template/dist/template-native.js"></script>
+    <script type="text/javascript" src="/assets/addons/cms/js/bootstrap-typeahead.min.js"></script>
+    <script type="text/javascript" src="/assets/addons/cms/js/swiper.min.js"></script>
+    <script type="text/javascript" src="/assets/addons/cms/js/cms.js?r=1565252499"></script>
+    <script type="text/javascript" src="/assets/addons/cms/js/common.js?r=1565252499"></script>
+</body>
+</html>

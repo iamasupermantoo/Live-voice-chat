@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>充值</title>
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #eeeeee;
+        }
+
+        #home {
+            width: 100%;
+            height: 100%;
+        }
+
+        #top {
+            padding: 12px;
+            border-bottom: 1px solid #eeeeee;
+            background-color: #ffffff;
+        }
+
+        #chongzhi {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        #inputBox {
+            width: 80%;
+            outline-style: none;
+            border: 0px;
+            border-radius: 20px;
+            padding: 10px 20px;
+            background-color: #f8f8f8;
+            color: #999999;
+        }
+
+        #inputBox:focus {
+            color: black;
+        }
+
+        #yes {
+            float: right;
+            color: #ff3e70;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
+        #moneyBox {
+            padding: 20px 12px;
+            border-bottom: 5px solid #eeeeee;
+            background-color: #ffffff;
+            height: 310px;
+        }
+
+        #selectMoney {
+            font-size: 20px;
+        }
+
+        .selectSon {
+            width: 48%;
+            float: left;
+            border: 1px solid #ff3e70;
+            margin-bottom: 7px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .margin20 {
+            margin-left: 2%;
+        }
+
+        .tit {
+            font-size: 12px;
+            margin-left: 10px;
+            margin-bottom: 0;
+            margin-top: 10px;
+            line-height: 30px;
+        }
+
+        .big {
+            font-size: 20px;
+        }
+
+        .redfont {
+            color: #ff3e70;
+        }
+
+        .moneyNum {
+            font-size: 12px;
+            margin-left: 10px;
+            color: #999999;
+        }
+
+        #bottom {
+            background-color: #ffffff;
+            padding: 10px 12px;
+        }
+
+        #iconVx {
+            width: 30px;
+            height: 30px;
+        }
+
+        #iconYes {
+            width: 20px;
+            height: 20px;
+            float: right;
+            margin-top: 5px;
+            margin-right: 20px;
+        }
+
+        .bgRed {
+            background-color: #ff3e70;
+        }
+
+        #user {
+            height: 56px;
+            display: none;
+        }
+
+        #userIcon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 14px;
+            float: left;
+        }
+
+        #userIcon img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #userName {
+            display: inline-block;
+            float: left;
+            width: 50%;
+            padding-left: 10px;
+            margin-bottom: 0px;
+        }
+
+        #userID {
+            display: inline-block;
+            float: left;
+            width: 50%;
+            padding-left: 10px;
+            margin-bottom: 0px;
+            color: #999999;
+        }
+
+        #changeUser {
+            position: absolute;
+            right: 10px;
+            top: 58px;
+            font-size: 16px;
+            color: #ff3e6d;
+            float: right;
+        }
+
+        .bgcolor {
+            background-color: #ff3e6d;
+            color: #ffffff !important;
+        }
+
+        .fontColor {
+            color: #ffffff
+        }
+
+        .righticon {
+            position: absolute;
+            right: 0;
+            width: 60px;
+            height: 20px;
+        }
+
+        .rightNum {
+            position: absolute;
+            right: 7px;
+            top: 2px;
+            font-size: 12px;
+            color: #ff3e6d;
+        }
+
+        .colorRed {
+            color: #ff3e6d !important;
+        }
+
+        .colorWhite {
+            color: #ffffff !important;
+        }
+
+        #duihuan {
+            display: block;
+            width: 77%;
+            height: 47px;
+            background-color: #ffd8e2;
+            margin: 0 auto;
+            margin-top: 30px;
+            color: #ffffff;
+            font-size: 17px;
+            line-height: 34px;
+            border-radius: 23px;
+            border-color: #ffd8e2;
+        }
+        #tishi{
+            color: #ff3e6d;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="home">
+        <div id="top">
+            <p id="chongzhi">充值账户</p>
+            <div id="loginId">
+                <input id="inputBox" type="text" placeholder="输入您的ID" oninput="value=value.replace(/[^\d]/g,'')"
+                    maxlength="11">
+                <div id="yes">确认</div>
+            </div>
+            <div id="user">
+                <div id="userIcon">
+                  	<img src="__STATIC__/home/img/icon.png" alt="" id="usericonImg">
+                </div>
+                <p id="userName">鱼骨头</p>
+                <p id="userID">ID：777777</p>
+                <div id="changeUser">切换账号</div>
+            </div>
+            <div id="tishi">请输入正确账号</div>
+        </div>
+        <div id="moneyBox">
+            <p id="selectMoney">请选择充值金额</p>
+            <div id="selectBox">
+                <div class="selectSon bgcolor" flag="true">
+                    <img src="__STATIC__/home/img/white.png" alt="" class="righticon">
+                    <div class="rightNum">返<span idclass="baifen">30%</span></div>
+                    <p class="tit"><span class="big fontColor">60</span>米钻<span class="redfont fontColor">+18米钻</span>
+                    </p>
+                    <p class="moneyNum fontColor">6元</p>
+                </div>
+                <div class="selectSon margin20">
+                    <img src="__STATIC__/home/img/pink.png" alt="" class="righticon">
+                    <div class="rightNum colorWhite">返<span class="baifen">30%</span></div>
+                    <p class="tit"><span class="big">180</span>米钻<span class="redfont">+54米钻</span></p>
+                    <p class="moneyNum">18元</p>
+                </div>
+                <div class="selectSon">
+                    <img src="__STATIC__/home/img/pink.png" alt="" class="righticon">
+                    <div class="rightNum colorWhite">返<span class="baifen">30%</span></div>
+                    <p class="tit"><span class="big">680</span>米钻<span class="redfont">+204米钻</span></p>
+                    <p class="moneyNum">68元</p>
+                </div>
+                <div class="selectSon margin20">
+                    <img src="__STATIC__/home/img/pink.png" alt="" class="righticon">
+                    <div class="rightNum colorWhite">返<span class="baifen">30%</span></div>
+                    <p class="tit"><span class="big">3880</span>米钻<span class="redfont">+1164米钻</span></p>
+                    <p class="moneyNum">388元</p>
+                </div>
+                <div class="selectSon">
+                    <img src="__STATIC__/home/img/pink.png" alt="" class="righticon">
+                    <div class="rightNum colorWhite">返<span class="baifen">30%</span></div>
+                    <p class="tit"><span class="big">12980</span>米钻<span class="redfont">+3894米钻</span></p>
+                    <p class="moneyNum">1298元</p>
+                </div>
+                <div class="selectSon margin20">
+                    <img src="__STATIC__/home/img/pink.png" alt="" class="righticon">
+                    <div class="rightNum colorWhite">返<span class="baifen">30%</span></div>
+                    <p class="tit"><span class="big">32980</span>米钻<span class="redfont">+9894米钻</span></p>
+                    <p class="moneyNum">3298元</p>
+                </div>
+            </div>
+        </div>
+        <div id="bottom">
+            <img src="__STATIC__/home/img/vx.png" alt="" id="iconVx">
+            <span style="margin-left:5px;">微信</span>
+            <img src="__STATIC__/home/img/yes.png" alt="" id="iconYes">
+        </div>
+        <div id="sureBox">
+            <a class="btn btn-default" href="#" role="button" id="duihuan">确定</a>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script>
+        var moneyChong;
+        /* 点击确认 - 寻找账号*/
+        $("#yes").click(function () {
+        var a = $("#inputBox").val()
+
+            $.ajax({
+                type: 'POST',
+                url: 'http://47.92.85.75/api/get_user_info',
+                dataType: 'json',
+                data: { user_id: a },
+                success: function (res) {
+                    if (res.code == 1) {
+                        $("#tishi").css("display", "none");
+                        $("#loginId").css("display", "none")
+                        $("#user").css("display", "block")
+                        $("#usericonImg").attr("src", res.data.headimgurl)
+                        $("#userName").text(res.data.nickname)
+                        $("#userID").text(res.data.ry_uid)
+                        /* 请求充值列表*/
+                        $.ajax({
+                            type: 'POST',
+                            url: 'http://47.92.85.75/api/androidGoodsList',
+                            dataType: 'json',
+                            data: { user_id: a },
+                            success: function (res) {
+                                console.log(res.data)
+                                $("#duihuan").css({
+                                    "background-color": "#ff3e6d",
+                                    "border-color": "#ff3e6d"
+                                })
+                                $("#selectBox >div").each(function (index) {
+                                    $(this).find("span.baifen").text(res.data.goods[index].ratio + "%")
+                                    $(this).find("span.big").text(res.data.goods[index].mizuan)
+                                    $(this).find("span.redfont").text("+" + res.data.goods[index].give + "米钻")
+                                    $(this).find("p.moneyNum").text(res.data.goods[index].price + "元")
+                                    $(this).attr("id", res.data.goods[index].id)
+                                    if (index == 0) {
+                                        moneyChong = res.data.goods[index].id;
+                                    }
+                                })
+                            },
+                            error: function (jqXHR) {
+                                console.log("失败了")
+                            }
+                        });
+                    } else {
+                        console.log("请输入正确ID")
+                        $("#tishi").css("display", "block");
+                    }
+
+                },
+                error: function (jqXHR) {
+                    console.log("失败了")
+                }
+            });
+        });
+        /* 点击切换账号 */
+        $("#changeUser").click(function () {
+            $("#loginId").css("display", "block");
+            $("#user").css("display", "none");
+        })
+        var selectGather = $("#selectBox").children();
+        for (let index = 0; index < $("#selectBox").children().length; index++) {
+            var selctobj = $("#selectBox").children()[index];
+            (function (el, index) {
+                el.onclick = function () {
+                    $("div[flag='true']").removeClass("bgcolor");
+                    $("div[flag='true'] img").attr("src", "./imgs/pink.png");
+                    $("div[flag='true'] div.rightNum").addClass("colorWhite");
+                    $("div[flag='true'] p.tit span.fontColor").removeClass("fontColor");
+                    $("div[flag='true'] p.fontColor").removeClass("fontColor");
+                    $("div[flag='true'] p.fontColor").attr("flag", "false");
+                    $(el).addClass("bgcolor");
+                    $(el).attr("flag", "true");
+                    $(el).children("img").attr("src", "./imgs/white.png");
+                    $(el).children("div .colorWhite ").removeClass("colorWhite")
+                    $(el).children("p.tit").children("span.redfont").removeClass("redfont")
+                    moneyChong = $(el).attr("id");
+                };
+            })(selctobj, index);
+        }
+        $("#sureBox").click(function () {
+        var a = $("#inputBox").val()
+            console.log(a,moneyChong,4)
+            $.ajax({
+                type: 'POST',
+                url: 'http://www.miniyuyin.cn/api/rechargePay',
+                dataType: 'json',
+                data: { user_id: a, goods_id: moneyChong, type: 4 },
+                success: function (res) {
+                  console.log(res);
+                    if (res.code == 1) {
+                        $(location).attr('href', res.date);
+                    }else{
+                        $(location).attr('href', './fail_tip');
+                    }
+                },
+                error: function (jqXHR) {
+                    console.log("失败了")
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>

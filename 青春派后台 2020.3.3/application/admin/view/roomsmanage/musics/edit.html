@@ -1,0 +1,65 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Music_url')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-music_url" readonly data-rule="required" class="form-control" name="row[music_url]" type="text" value="{$row.music_url|htmlentities}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-music_url" class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button id="plupload-music_url" class="btn btn-primary plupload" data-input-id="c-music_url" data-url="ajax/upload?filepath=/files/{:date('Ymd')}/"><i class="fa fa-upload"></i> {:__("上传文件")}</button>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Enable')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[enable]', ['1'=>__('是'), '2'=>__('否')],$row['enable'])}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Music_name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-music_name" data-rule="required" class="form-control" name="row[music_name]" type="text" value="{$row.music_name|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Upload_user')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-upload_user" data-rule="required" class="form-control" name="row[upload_user]" type="text" value="{$row.upload_user|htmlentities}">
+        </div>
+    </div>
+    <!-- <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[type]', ['1'=>__('音乐'), '2'=>__('音效')],$row['type'])}
+        </div>
+    </div> -->
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Singer')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-singer" class="form-control" name="row[singer]" type="text" value="{$row.singer|htmlentities}">
+        </div>
+    </div>
+    <!-- <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Is_default')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[is_default]', ['1'=>__('是'), '2'=>__('否')],$row['is_default'])}
+        </div>
+    </div> -->
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Updated_at')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-updated_at" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[updated_at]" type="text" value="{:$row.updated_at?datetime($row.updated_at):''}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

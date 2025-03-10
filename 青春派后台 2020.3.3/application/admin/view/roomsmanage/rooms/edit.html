@@ -1,0 +1,250 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Numid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-numid" data-rule="required" class="form-control" name="row[numid]" type="number" value="{$row.numid|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Uid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input disabled="" id="c-uid" data-rule="required" data-source="usersmanage/users/index" data-field="nickname" class="form-control selectpage" name="row[uid]" type="text" value="{$row.uid|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Room_status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[room_status]', ['1'=>__('正常'), '2'=>__('上锁'), '3'=>__('封禁'), '4'=>__('关闭')],$row['room_status'])}
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Room_type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select id="c-room_class" data-rule="required" class="form-control selectpicker" name="row[room_class]">
+                <option value="">请选择</option>
+                {foreach name="catList" item="vo"}
+                    <option value="{$vo.id}" {in name="vo.id" value="$row.room_class"}selected{/in}>{$vo.name}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('子分类')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select id="c-room_type" data-rule="required" class="form-control selectpicker" name="row[room_type]">
+                <option value="">请选择</option>
+                {foreach name="typeList" item="vo"}
+                   <option data-type="{$vo.pid}" value="{$vo.id}" {if condition="($vo['id'] eq $row['room_type']) && ($vo['pid'] eq $row['room_class'])"}selected{/if} >{$vo.name}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+
+
+
+
+
+
+   
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Room_name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-room_name" data-rule="required" class="form-control" name="row[room_name]" type="text" value="{$row.room_name|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Room_cover')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-room_cover" data-rule="" class="form-control" size="50" name="row[room_cover]" type="text" value="{:getImg($row['room_cover'])}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-room_cover" class="btn btn-danger plupload" data-input-id="c-room_cover" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-url="ajax/upload?filepath=/cover/{:date('Ymd')}/" data-preview-id="p-room_cover"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-room_cover" class="btn btn-primary fachoose" data-input-id="c-room_cover" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-room_cover"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-room_cover"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Room_intro')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-room_intro" class="form-control" name="row[room_intro]" type="text" value="{$row.room_intro|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Room_pass')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-room_pass" class="form-control" name="row[room_pass]" type="text" value="{$row.room_pass|htmlentities}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Room_welcome')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-room_welcome" class="form-control" name="row[room_welcome]" type="text" value="{$row.room_welcome|htmlentities}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('是否推荐')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[is_tj]', ['1'=>__('是'), '2'=>__('否')],$row['is_tj'])}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Week_star')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[week_star]', ['1'=>__('是'), '2'=>__('否')],$row['week_star'])}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Is_popular')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[is_popular]', ['1'=>__('热门'), '2'=>__('非热门')],$row['is_popular'])}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Secret_chat')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[secret_chat]', ['1'=>__('推荐'), '2'=>__('非推荐')],$row['secret_chat'])}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Is_top')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[is_top]', ['1'=>__('置顶'), '2'=>__('非置顶')],$row['is_top'])}
+        </div>
+    </div>
+    <!-- <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Super_uid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[super_uid]', ['1'=>__('可以'), '2'=>__('不可以')],$row['super_uid'])}
+        </div>
+    </div> -->
+    <!-- <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Ranking')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-ranking" data-rule="required" class="form-control" name="row[ranking]" type="number" value="{$row.ranking|htmlentities}">
+        </div>
+    </div> -->
+    <!-- <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Openid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-openid" class="form-control" name="row[openid]" type="text" value="{$row.openid|htmlentities}">
+        </div>
+    </div> -->
+    <!-- <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Room_background')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-room_background" class="form-control" name="row[room_background]" type="text" value="{$row.room_background|htmlentities}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Microphone')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-microphone" data-rule="required" class="form-control" name="row[microphone]" type="text" value="{$row.microphone|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Is_prohibit_sound')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-is_prohibit_sound" data-rule="required" class="form-control" name="row[is_prohibit_sound]" type="text" value="{$row.is_prohibit_sound|htmlentities}">
+        </div>
+    </div> -->
+    <!--<div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Commission_proportion')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-commission_proportion" class="form-control" name="row[commission_proportion]" type="text" value="{$row.commission_proportion|htmlentities}">
+        </div>
+    </div>-->
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Is_afk')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[is_afk]', ['0'=>__('离开'), '1'=>__('在播')],$row['is_afk'])}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Hot')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-hot" class="form-control" name="row[hot]" type="number" value="{$row.hot|htmlentities}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('置顶开始时间')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-start_hour" class="form-control" name="row[start_hour]" type="number" min="0" max="23" value="{$row.start_hour|htmlentities}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('置顶结束时间')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-end_hour" class="form-control" name="row[end_hour]" type="number" min="0" max="23" value="{$row.end_hour|htmlentities}">
+        </div>
+    </div>
+
+    <!-- <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Roomadmin')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-roomAdmin" data-source="usersmanage/users/selectpage" data-multiple="true" data-field="nickname" class="form-control selectpage" name="row[roomAdmin]" type="text" value="{$row.roomAdmin|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Roomvisitor')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-roomVisitor" data-source="usersmanage/users/selectpage" data-multiple="true" data-field="nickname" class="form-control selectpage" name="row[roomVisitor]" type="text" value="{$row.roomVisitor|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Roomspeak')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-roomSpeak" data-source="usersmanage/users/selectpage" data-multiple="true" data-field="nickname" class="form-control selectpage" name="row[roomSpeak]" type="text" value="{$row.roomSpeak|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Roomjudge')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-roomJudge" data-source="usersmanage/users/selectpage" data-multiple="true" data-field="nickname" class="form-control selectpage" name="row[roomJudge]" type="text" value="{$row.roomJudge|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Roomsound')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-roomSound" data-source="usersmanage/users/selectpage" data-multiple="true" data-field="nickname" class="form-control selectpage" name="row[roomSound]" type="text" value="{$row.roomSound|htmlentities}">
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Roomblack')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-roomBlack" data-source="usersmanage/users/selectpage" data-multiple="true" data-field="nickname" class="form-control selectpage" name="row[roomBlack]" type="text" value="{$row.roomBlack|htmlentities}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Freshtime')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-freshTime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[freshTime]" type="text" value="{:$row.freshTime?datetime($row.freshTime):''}">
+        </div>
+    </div> -->
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Updated_at')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-updated_at" readonly class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[updated_at]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

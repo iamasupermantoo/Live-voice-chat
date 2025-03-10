@@ -1,0 +1,135 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Get_type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select  id="c-get_type" data-rule="required" class="form-control selectpicker" name="row[get_type]">
+                {foreach name="wareswayList" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.get_type"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('类型')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select id="c-type" data-rule="required" class="form-control selectpicker" name="row[type]">
+                <option value="">请选择</option>
+                {foreach name="typeList" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.type"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" class="form-control" name="row[name]" type="text" value="{$row.name|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Title')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-title" class="form-control" name="row[title]" type="text" value="{$row.title|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('price')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-price" class="form-control" name="row[price]" type="text" value="{$row.price|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('score')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-score" class="form-control" name="row[score]" type="number" value="{$row.score|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Level')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-level" class="form-control" name="row[level]" type="number" value="{$row.level|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-show_img" class="control-label col-xs-12 col-sm-2">{:__('Show_img')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-show_img" data-rule="" class="form-control" size="50" name="row[show_img]" type="text" value="{:getImg($row['show_img'])}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-show_img" class="btn btn-danger plupload" data-input-id="c-show_img" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-url="Ajax/upload/?filepath=/wares/" data-preview-id="p-show_img"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-show_img" class="btn btn-primary fachoose" data-input-id="c-show_img" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-show_img"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-show_img"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-img1" class="control-label col-xs-12 col-sm-2">{:__('Img1')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-img1" data-rule="" class="form-control" size="50" name="row[img1]" type="text" value="{:getImg($row['img1'])}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-img1" class="btn btn-danger plupload" data-input-id="c-img1" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-url="Ajax/upload/?filepath=/wares/" data-preview-id="p-img1"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-img1" class="btn btn-primary fachoose" data-input-id="c-img1" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-img1"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-img1"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-img2" class="control-label col-xs-12 col-sm-2">{:__('Img2')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-img2" data-rule="" class="form-control" size="50" name="row[img2]" type="text" value="{:getImg($row['img2'])}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-img2" class="btn btn-danger plupload" data-input-id="c-img2" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-url="Ajax/upload/?filepath=/wares/" data-preview-id="p-img2"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-img2" class="btn btn-primary fachoose" data-input-id="c-img2" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-img2"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-img2"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-img3" class="control-label col-xs-12 col-sm-2">{:__('Img3')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-img3" data-rule="" class="form-control" size="50" name="row[img3]" type="text" value="{:getImg($row['img3'])}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-img3" class="btn btn-danger plupload" data-input-id="c-img3" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-url="Ajax/upload/?filepath=/wares/" data-preview-id="p-img3"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-img3" class="btn btn-primary fachoose" data-input-id="c-img3" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-img3"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-img3"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Color')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-color" class="form-control" name="row[color]" type="text" value="{$row.color|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Expire')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-expire" class="form-control" name="row[expire]" type="number" value="{$row.expire|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Enable')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[enable]', ['1'=>__('启用'), '2'=>__('禁用')],$row['enable'])}
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

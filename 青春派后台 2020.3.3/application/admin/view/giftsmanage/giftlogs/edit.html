@@ -1,0 +1,83 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Giftid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-giftId" data-rule="required" data-source="giftsmanage/gifts/index" data-field="name" class="form-control selectpage" name="row[giftId]" type="text" value="{$row.giftId|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Uid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-uid" data-rule="required" data-source="usersmanage/users/index" data-field="nickname" class="form-control selectpage" name="row[uid]" type="text" value="{$row.uid|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Giftname')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-giftName" data-rule="required" class="form-control" name="row[giftName]" type="text" value="{$row.giftName|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Giftnum')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-giftNum" data-rule="required" class="form-control" name="row[giftNum]" type="number" value="{$row.giftNum|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Giftprice')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-giftPrice" data-rule="required" class="form-control" step="0.01" name="row[giftPrice]" type="number" value="{$row.giftPrice|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('User_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-user_id" data-rule="required" data-source="usersmanage/users/index" data-field="nickname" class="form-control selectpage" name="row[user_id]" type="text" value="{$row.user_id|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Fromuid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-fromUid" data-rule="required" data-source="usersmanage/users/index" data-field="nickname" class="form-control selectpage" name="row[fromUid]" type="text" value="{$row.fromUid|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Is_play')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[is_play]', ['1'=>__('已播报'), '2'=>__('未播报')],$row['is_play'])}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Platform_obtain')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-platform_obtain" class="form-control" step="0.01" name="row[platform_obtain]" type="number" value="{$row.platform_obtain|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Fromuid_obtain')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-fromUid_obtain" class="form-control" step="0.01" name="row[fromUid_obtain]" type="number" value="{$row.fromUid_obtain|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Uid_obtain')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-uid_obtain" class="form-control" step="0.01" name="row[uid_obtain]" type="number" value="{$row.uid_obtain|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Updated_at')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-updated_at" readonly class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true"
+                   name="row[updated_at]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
